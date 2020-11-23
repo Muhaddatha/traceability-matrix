@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Tracability Matrix Tiny Tool</title>
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
       <header>
@@ -16,32 +17,43 @@
       <main>
         <p>Choose table headings</p>
          <input type="checkbox" class="column1" id="id">
-         <label>ID &#9432;</label>
+         <label>ID</label> <span>&#9432;</span>
          <br>
-         <input type="checkbox" class="column2" id="requirementDescription">
-         <label>Requirement Description &#9432;</label>
+         <input type="checkbox" class="column2" id="requirementId">
+         <label>Requirement ID</label> <span>&#9432;</span>
          <br>
-         <input type="checkbox" class="column1" id="requirementId">
-         <label>Requirement ID &#9432;</label>
+         <input type="checkbox" class="column1" id="requirementDescription">
+         <label>Requirement Description</label> <span>&#9432;</span>
          <br>
-         <input type="checkbox" class="column2" id="useCaseId">
-         <label>Use Case ID &#9432;</label>
-         <br>
-         <input type="checkbox" class="column1" id="requirementVersion">
-         <label>Requirement Version &#9432;</label>
-         <br>
-         <input type="checkbox" class="column2" id="documents">
-         <label>Documents &#9432;</label>
-         <br>
-         <input type="checkbox" class="column1" id="status">
-         <label>Status &#9432;</label>
-         <br>
-         <input type="checkbox" class="column2" id="classMethod">
-         <label>Class/Method &#9432;</label>
+         <input type="checkbox" class="column2" id="status">
+         <label>Status</label> <span>&#9432;</span>
          <br>
          <input type="checkbox" class="column1" id="priority">
-         <label>Priority &#9432;</label>
+         <label>Priority</label> <span>&#9432;</span>
          <br>
+         <input type="checkbox" class="column2" id="classMethod">
+         <label>Class/Method</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column1" id="developer">
+         <label>Developer</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column2" id="useCaseId">
+         <label>Use Case ID</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column1" id="useCaseDescription">
+         <label>Use Case Description</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column2" id="testCaseId">
+         <label>Test Case ID</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column1" id="testCaseDescription">
+         <label>Test Case Description</label> <span>&#9432;</span>
+         <br>
+         <input type="checkbox" class="column2" id="tester">
+         <label>Tester</label> <span>&#9432;</span>
+         <br>
+
+
       </main>
       <footer>
         <input type="button" id= "continueButton" value="Continue">
