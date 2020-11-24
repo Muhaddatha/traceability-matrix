@@ -15,53 +15,90 @@
       <div>
         <h2>Add new row</h2>
         <form id="add_row_form">
-          <label for="id">ID</label>
-          <input type="text" id="id" disabled><br>
-          <label for="req_id">Requirement ID</label>
-          <input type="text" id="req_id"><br>
-          <label for="req_version">Requirement Version</label>
-          <input type="text" id="req_version"><br>
-          <label for="req_descrip">Requirement Description</label>
-          <input type="text" id="req_descrip"><br>
-          <label for="status">Status</label>
-          <input type="text" id="status"><br>
-          <label for="priority">Priority</label>
-          <select id="priority">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select><br>
-          <label for="docs">Documents</label>
-          <input type="text" id="docs"><br>
-          <label for="class">Class/Methods/Functions</label>
-          <input type="text" id="class"><br>
-          <label for="developer">Developer(s)</label>
-          <input type="text" id="developer"><br>
-          <label for="wbs">WBS</label>
-          <input type="text" id="wbs"><br>
 
-          <label for="use_case_ID">Use Case ID</label>
-          <input type="text" id="use_case_ID"><br>
-          <label for="use_case_descrip">Use Case Description</label>
-          <input type="text" id="use_case_descrip"><br>
+          <div id="form-labels-and-input-fields" hidden>
 
-          <label for="test_case_ID">Test Case ID</label>
-          <input type="text" id="test_case_ID"><br>
-          <label for="test_case_descrip">Test Case Description</label>
-          <input type="text" id="test_case_descrip"><br>
-          <label for="tester">Tester</label>
-          <input type="text" id="tester"><br>
-          <label for="test_designer">Test Designer</label>
-          <input type="text" id="test_designer"><br>
+            <label for="id">ID</label>
+            <input type="text" id="id" disabled><br>
 
-          <label for="defect">Defect</label>
-          <input type="text" id="defect"><br>
-          <label for="defect_status">Defect Status</label>
-          <input type="text" id="defect_status"><br>
 
-          <label for="add_comments">Additional Comments</label>
-          <textarea id="add_comments"></textarea><br>
+            <label for="req_id">Requirement ID</label>
+            <input type="text" id="req_id"><br>
 
+
+            <label for="req_version">Requirement Version</label>
+            <input type="text" id="req_version"><br>
+
+
+            <label for="req_descrip">Requirement Description</label>
+            <input type="text" id="req_descrip"><br>
+
+
+            <label for="status">Status</label>
+            <input type="text" id="status"><br>
+
+
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select><br>
+
+
+            <label for="docs">Documents</label>
+            <input type="text" id="docs"><br>
+
+
+            <label for="class">Class/Methods/Functions</label>
+            <input type="text" id="class"><br>
+
+
+            <label for="developer">Developer(s)</label>
+            <input type="text" id="developer"><br>
+
+
+            <label for="wbs">WBS</label>
+            <input type="text" id="wbs"><br>
+
+            <label for="use_case_ID">Use Case ID</label>
+            <input type="text" id="use_case_ID"><br>
+
+
+            <label for="use_case_descrip">Use Case Description</label>
+            <input type="text" id="use_case_descrip"><br>
+
+
+
+            <label for="test_case_ID">Test Case ID</label>
+            <input type="text" id="test_case_ID"><br>
+
+
+            <label for="test_case_descrip">Test Case Description</label>
+            <input type="text" id="test_case_descrip"><br>
+
+
+            <label for="tester">Tester</label>
+            <input type="text" id="tester"><br>
+
+
+            <label for="test_designer">Test Designer</label>
+            <input type="text" id="test_designer"><br>
+
+            <label for="defect">Defect</label>
+            <input type="text" id="defect"><br>
+
+
+            <label for="defect_status">Defect Status</label>
+            <input type="text" id="defect_status"><br>
+
+            <label for="add_comments">Additional Comments</label>
+            <textarea id="add_comments"></textarea><br>
+
+
+
+          </div>
+          
           <input type="submit" id="add_btn" value="Add!">
         </form>
       </div>
@@ -69,8 +106,8 @@
       <br>
       <table>
         <tr>
-          <th>Project name: </th>
-          <th>Project description: </th>
+          <th id="project-name-heading">Project name: </th>
+          <th id="project-description-heading">Project description: </th>
         </tr>
       </table>
 

@@ -57,8 +57,8 @@ $(document).ready(function(){ //waits until document is fully loaded
       
     }
 
-    //send array to next page via session storage/cookies/?
-    sessionStorage.setItem("matrixStorage", passedArray);
+    //send array to next page via session storage
+    sessionStorage.setItem("matrixStorage", JSON.stringify(passedArray));
 
   });
 
