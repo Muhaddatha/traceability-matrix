@@ -19,7 +19,9 @@ $(document).ready(function(){
 
     console.log(array.length);
     let inputIdToShow;
-    let rowElement = [];
+    let rowElement = []; //stores all td's of a signle row
+    let tableRow = []; //collection of row elements
+    
     let formDiv = $("#form-labels-and-input-fields"); //gets element by ID
 
     //adds row input fields dynamically to the table
@@ -80,6 +82,10 @@ $(document).ready(function(){
             $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '"> <br>');
 
         }
+
+        //when form submitted, get element by name
+        //make row object
+        //add row's data to table dt
         
     }
     
