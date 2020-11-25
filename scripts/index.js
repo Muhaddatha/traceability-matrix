@@ -32,6 +32,7 @@ $(document).ready(function(){ //waits until document is fully loaded
       //set the first two indexes of the array to project name and project description
       passedArray[0] = projectName;
       passedArray[1] = projectDescription;
+      passedArray[2] = "ID"; //Since project ID is not option, we have it hardcoded as a row element. In the second page, we'll auto increment the ID everytime a row is added. We'll decrement the iD everytime a row is removed. So, the selected checkbox ids start from index 3 of the passed array
 
      
       console.log("Project name inputted (passedArray[0]): " + passedArray[0]);
@@ -39,7 +40,7 @@ $(document).ready(function(){ //waits until document is fully loaded
 
       const checkboxes = document.getElementsByName("check"); //get all the ckecbox inputs
 
-      let counter = 2; //helps put checkbox id's in the right position in the array
+      let counter = 3; //helps put checkbox id's in the right position in the array
 
       console.log("Total length of checkboxes: " + checkboxes.length)
       for (let i = 0; i < checkboxes.length; i++) {
