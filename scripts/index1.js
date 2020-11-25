@@ -42,14 +42,14 @@ $(document).ready(function() {
         }
         else{ //inputs with selects (priority)
 
-            if(inputIdToShow == "id"){
-                //add label tag
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > ID </label>');
+            // if(inputIdToShow == "id"){
+            //     //add label tag
+            //     $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > ID </label>');
 
-                $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '" required> <br>');
-                continue; //goes back to the top of the loop
-            }
-            else if(inputIdToShow == "req_id"){
+            //     $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '" required> <br>');
+            //     continue; //goes back to the top of the loop
+            // }
+            if(inputIdToShow == "req_id"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement ID </label>');
 
             }
