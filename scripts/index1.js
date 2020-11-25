@@ -93,24 +93,37 @@ $(document).ready(function() {
     //let rowElement = []; //stores all td's of a signle row
   //  let tableRow = [];
     $('#add_row_form').submit(handleAddRowForm);
+    console.log("Line 96 after submit form event");
 
 });
 
 function handleAddRowForm(e) {
   let rowElement = []; //stores all td's of a signle row
 
-  for (let i = 2; i < array.length; i++){
+  for(let i = 2; i < array.length; i++){
       rowElement[i-2] = document.getElementById(array[i]).value;
       console.log('rowElement:' + rowElement[i-2]);
   }
+
+  //reset form values
+  resetForm();
 
   tableRow[tableRow.length] = rowElement;
   console.log('tableRow.length after push: ' + tableRow.length);
 
   console.log('tableRow:' + tableRow);
-
   //for (let j = 0; j < tableRow.length; j++) {
   //  console.log('tableRow:' + tableRow[j]);
   //}
   e.preventDefault();
+}
+
+
+function resetForm(){
+    //reset form here since 'add!' button clicked
+    console.log("restting form values");
+    for(let i = 2; i < array.length; i++){
+        document.getElementById(array[i]).value = "";
+    }
+
 }
