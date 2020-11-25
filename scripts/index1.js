@@ -1,6 +1,8 @@
 let tableRow = Array(); //collection of row elements in a 2-D array
 let array;
 
+let rowID = 0; //global variable to keep track of row ids that are auto incremented
+
 $(document).ready(function() {
 
 
@@ -25,8 +27,8 @@ $(document).ready(function() {
 
     let formDiv = $("#form-labels-and-input-fields"); //gets element by ID
 
-    //adds row input fields dynamically to the table
-    for(let i = 2; i < array.length; i++){
+    //adds row input fields dynamically to the form
+    for(let i = 3; i < array.length; i++){
 
         inputIdToShow = array[i];
 
@@ -99,8 +101,11 @@ $(document).ready(function() {
 
 function handleAddRowForm(e) {
   let rowElement = []; //stores all td's of a signle row
+  rowID++; //since we are adding a new row, the ID number is increasing
 
-  for(let i = 2; i < array.length; i++){
+  rowElement[0] = rowID; //The first index of rowElement stores the rowID that is autoincremented everytine 'Add!' button is clicked
+
+  for(let i = 3; i < array.length; i++){
       rowElement[i-2] = document.getElementById(array[i]).value;
       console.log('rowElement:' + rowElement[i-2]);
   }
