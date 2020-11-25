@@ -1,4 +1,7 @@
-$(document).ready(function(){
+let tableRow = Array(); //collection of row elements in a 2-D array
+let array;
+
+$(document).ready(function() {
 
 
     array = JSON.parse(sessionStorage.getItem("matrixStorage"));
@@ -8,20 +11,18 @@ $(document).ready(function(){
     console.log(array); //JSON object with array of information from + length attribute
     console.log(array[0]);
 
-   
+
 
     //addding project name and project description to table
     document.getElementById("project-name-heading").innerText += array[0];
     document.getElementById("project-description-heading").innerText += array[1];
 
-    
+
 
 
     console.log(array.length);
     let inputIdToShow;
-    let rowElement = []; //stores all td's of a signle row
-    let tableRow = []; //collection of row elements
-    
+
     let formDiv = $("#form-labels-and-input-fields"); //gets element by ID
 
     //adds row input fields dynamically to the table
@@ -77,7 +78,7 @@ $(document).ready(function(){
             else if(inputIdToShow == "tester"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Tester </label>');
             }
-           
+
             //Append input field for the user option
             $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '"> <br>');
 
@@ -86,10 +87,30 @@ $(document).ready(function(){
         //when form submitted, get element by name
         //make row object
         //add row's data to table dt
-        
+
     }
-    
 
-
+    //let rowElement = []; //stores all td's of a signle row
+  //  let tableRow = [];
+    $('#add_row_form').submit(handleAddRowForm);
 
 });
+
+function handleAddRowForm(e) {
+  let rowElement = []; //stores all td's of a signle row
+
+  for (let i = 2; i < array.length; i++){
+      rowElement[i-2] = document.getElementById(array[i]).value;
+      console.log('rowElement:' + rowElement[i-2]);
+  }
+
+  tableRow[tableRow.length] = rowElement;
+  console.log('tableRow.length after push: ' + tableRow.length);
+
+  console.log('tableRow:' + tableRow);
+
+  //for (let j = 0; j < tableRow.length; j++) {
+  //  console.log('tableRow:' + tableRow[j]);
+  //}
+  e.preventDefault();
+}
