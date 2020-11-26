@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tracability Matrix Tiny Tool</title>
+    <!-- <link rel="stylesheet" href="styles/styling.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+  </head>
+  <body>
+      <header>
+        <p>Welcome to the Tracability Matrix Builder Tiny Tool</p>
+        
+      </header>
+      <main>
+        <p>Choose table headings</p>
+
+        <form id="form" action="index1.html">
+
+          <label>Enter project name: </label>
+          <input type="text" id="projectName" required>
+          <br>
+          <label>Enter project description: </label>
+          <textarea id="projectDescription" rows="4" cols="50" required></textarea>
+
+          <br>
+          <!-- <input type="checkbox" class="column1" id="id" name="check">
+          <label>ID</label> <span>&#9432;</span>
+          <br> -->
+
+
+          <input type="checkbox" class="column2" id="req_id" name="check">
+          <label>Requirement ID</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column1" id="req_descrip" name="check">
+          <label>Requirement Description</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column2" id="status" name="check">
+          <label>Status</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column1" id="priority" name="check">
+          <label>Priority</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column2" id="class" name="check">
+          <label>Class/Method</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column1" id="developer" name="check">
+          <label>Developer</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column2" id="use_case_ID" name="check">
+          <label>Use Case ID</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column1" id="use_case_descrip" name="check">
+          <label>Use Case Description</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column2" id="test_case_ID" name="check">
+          <label>Test Case ID</label> <span>&#9432;</span>
+          <br>
+
+
+          <input type="checkbox" class="column1" id="test_case_descrip" name="check">
+          <label>Test Case Description</label> <span>&#9432;</span>
+          <br>
+
+          
+          <input type="checkbox" class="column2" id="tester" name="check">
+          <label>Tester</label> <span>&#9432;</span>
+          <br>
+
+         
+          <input type="submit" id="continueButton" value="Continue">
+         
+
+        </form>
+         
+
+      </main>
+      <footer>
+        
+        
+      </footer>
+  </body>
+</html>
