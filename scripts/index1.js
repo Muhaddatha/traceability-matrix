@@ -114,35 +114,32 @@ $(document).ready(function() {
 function handleAddRowForm(e) {
     
     e.preventDefault();
-  let rowElement = []; //stores all td's of a signle row
-  rowID++; //since we are adding a new row, the ID number is increasing
+    let rowElement = []; //stores all td's of a signle row
+    rowID++; //since we are adding a new row, the ID number is increasing
 
-  rowElement[0] = rowID; //The first index of rowElement stores the rowID that is autoincremented everytine 'Add!' button is clicked
+    rowElement[0] = rowID; //The first index of rowElement stores the rowID that is autoincremented everytine 'Add!' button is clicked
 
-  for(let i = 3; i < array.length; i++){
-      rowElement[i-2] = document.getElementById(array[i]).value;
-      console.log('rowElement:' + rowElement[i-2]);
-  }
+    for(let i = 3; i < array.length; i++){
+        rowElement[i-2] = document.getElementById(array[i]).value;
+        console.log('rowElement:' + rowElement[i-2]);
+    }
 
-  $("#theMatrix").append("<tr id='row" + rowID + "'></tr>");
-  for(let i = 1; i < rowElement.length; i++) {
+    $("#theMatrix").append("<tr id='row" + rowID + "'></tr>");
+    for(let i = 1; i < rowElement.length; i++) {
       $("#row" + rowID).append("<td>" + rowElement[i] + "</td>");
-  }
-    $("#row" + rowID).append("<input type='button' id='delete'" + rowID + "' value='Delete!'>");
+    }
+    $("#row" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
   
-  //reset form values
+    //reset form values
     console.log("Resetting the form");
     document.getElementById("add_row_form").reset();
-    
-  //resetForm();
 
-  tableRow[tableRow.length] = rowElement;
-  console.log('tableRow.length after push: ' + tableRow.length);
 
-  console.log('tableRow:' + tableRow);
-  //for (let j = 0; j < tableRow.length; j++) {
-  //  console.log('tableRow:' + tableRow[j]);
-  //}
+    tableRow[tableRow.length] = rowElement;
+    console.log('tableRow.length after push: ' + tableRow.length);
+
+    console.log('tableRow:' + tableRow);
+  
 }
 
 
@@ -152,5 +149,13 @@ function resetForm(){
     for(let i = 2; i < array.length; i++){
         document.getElementById(array[i]).value = "";
     }
+
+}
+
+function deleteRowHandler(idOfRowToBeDeleted){
+
+    console.log("Inside delete row function");
+    console.log("Id of row to be deleted: " + idOfRowToBeDeleted);
+
 
 }
