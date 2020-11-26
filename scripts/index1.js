@@ -112,6 +112,8 @@ $(document).ready(function() {
 });
 
 function handleAddRowForm(e) {
+    
+    e.preventDefault();
   let rowElement = []; //stores all td's of a signle row
   rowID++; //since we are adding a new row, the ID number is increasing
 
@@ -127,9 +129,12 @@ function handleAddRowForm(e) {
       $("#row" + rowID).append("<th>" + rowElement[i] + "</th>");
   }
     $("#row" + rowID).append("<input type='button' id='delete'" + rowID + "' value='Delete!'>")
-  e.preventDefault();
+  
   //reset form values
-  resetForm();
+    console.log("Resetting the form");
+    document.getElementById("add_row_form").reset();
+    
+  //resetForm();
 
   tableRow[tableRow.length] = rowElement;
   console.log('tableRow.length after push: ' + tableRow.length);
