@@ -157,5 +157,16 @@ function deleteRowHandler(idOfRowToBeDeleted){
     console.log("Inside delete row function");
     console.log("Id of row to be deleted: " + idOfRowToBeDeleted);
 
+    console.log("tableRow before removing a row: " + tableRow);
+    console.log("Table row to be deleted: " + tableRow[idOfRowToBeDeleted - 1]);
+    //step1: delete row from array
+    tableRow[idOfRowToBeDeleted - 1] = [];
+    console.log("Table row to be deleted (after deletion): " + tableRow[idOfRowToBeDeleted - 1]);
+    console.log("tableRow after removing a row: " + tableRow);
+    //row removed from tableRow array and initialized to []
+
+    //step2: delete tr from matrix
+    $('#row' + idOfRowToBeDeleted).remove();
+    console.log("Row removed from table");
 
 }
