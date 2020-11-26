@@ -126,7 +126,7 @@ function handleAddRowForm(e) {
 
   $("#theMatrix").append("<tr id='row" + rowID + "'></tr>");
   for(let i = 0; i < rowElement.length; i++) {
-      $("#row" + rowID).append("<th>" + rowElement[i] + "</th>");
+      $("#row" + rowID).append("<td>" + rowElement[i] + "</td>");
   }
     $("#row" + rowID).append("<input type='button' id='delete'" + rowID + "' value='Delete!'>");
   
