@@ -170,3 +170,10 @@ function deleteRowHandler(idOfRowToBeDeleted){
     console.log("Row removed from table");
 
 }
+
+
+//This function deletes all the table rows
+function clearTableHandler(){
+    console.log("Clearing table rows");
+    $("#theMatrix > tbody").empty();
+}
