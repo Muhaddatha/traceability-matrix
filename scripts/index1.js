@@ -45,7 +45,9 @@ $(document).ready(function() {
         else{ 
             if(inputIdToShow == "req_id"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement ID </label>');
-                $("#headingsRow").append('<th>Requirement ID</th>')
+                $("#headingsRow").append('<th>Requirement ID</th>');
+                $("#form-labels-and-input-fields").append('<input type="text" id="' + inputIdToShow + '" required> <br>');
+                continue;
             }
             else if(inputIdToShow == "req_descrip"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement Description </label>');
@@ -173,6 +175,7 @@ function deleteRowHandler(idOfRowToBeDeleted){
 
 
 //This function deletes all the table rows
+//Precondition: Matrix has atleast one row
 function clearTableHandler(){
     console.log("Clearing table rows");
     $("tbody").empty(); //clears table rows
@@ -185,7 +188,10 @@ function exportCSV() {
   
     //call function that updates the tableRow array
     updateTableRowArray();
-    //raise alerts if project name and project description are empty? then call 
+    //raise alerts if project name and project description are empty? 
+    //raise alerts if no rows are in the table?
+    //add test cases to test plan document?
+    //then call 
     //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
@@ -274,6 +280,31 @@ function updateTableRowArray(){
     else{
         //if project description hasn't changed, do nothing
         console.log("Project description has not changed.");
+    }
+
+
+    //update table row information
+    //1: Check to see if there are any table rows
+    let HTMLTableRows = document.getElementsByClassName("hide");
+
+    if(HTMLTableRows.length == 0){
+        console.log("No table rows exist in the table.");
+    }
+    console.log("All user-made HTML table rows: ");
+    for(let i = 0; i < HTMLTableRows.length; i++){
+
+
+        // console.log("HTMLTableRows[" + i + "].innerHTML: " + HTMLTableRows[i].innerHTML);
+        console.log("HTMLTableRows[" + i + "].innerText: " + HTMLTableRows[i].innerText);
+        //returns a string of the td's in this row
+
+        //make requirement Ids unique?
+
+        // let HTMLTableData = HTMLTableRows[i].getElementsByTagName("td").innerText;
+        // for(let j = 0; j < HTMLTableData[i].length; j++){
+        //     // console.log("inside second for loop in updateTableRowArray");
+        //     console.log("HTMLTableRows[" + i + "][" + j + "].innerText: " + HTMLTableData[j]);
+        // }
     }
 }
 
