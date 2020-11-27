@@ -176,7 +176,8 @@ function deleteRowHandler(idOfRowToBeDeleted){
 //This function deletes all the table rows
 function clearTableHandler(){
     console.log("Clearing table rows");
-    $("#theMatrix > tbody").empty();
+    $("tbody").empty(); //clears table rows
+    //still need to clear the rows from tableRow array
 }
 
 
