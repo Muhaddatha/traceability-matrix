@@ -1,5 +1,6 @@
 let tableRow = Array(); //collection of row elements in a 2-D array
 let array;
+let firstExport = true;
 
 let rowID = 0; //global variable to keep track of row ids that are auto incremented
 
@@ -39,7 +40,7 @@ $(document).ready(function() {
             $("#form-labels-and-input-fields").append('<select id="' + inputIdToShow + '"> <select id="' + inputIdToShow + '"></select> <br>');
             $("#priority").append('"<option value="blank"> </option><option value="low">Low</option> <option value="medium">Medium</option> <option value="high">High</option>"');
 
-            $("#headingsRow").append('<th><strong>Priority</strong></th>')
+            $("#headingsRow").append('<th>Priority</th>')
         }
         else{ //inputs with selects (priority)
 
@@ -52,7 +53,7 @@ $(document).ready(function() {
             // }
             if(inputIdToShow == "req_id"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement ID </label>');
-                $("#headingsRow").append('<th><strong>Requirement ID</strong></th>')
+                $("#headingsRow").append('<th>Requirement ID</th>')
             }
             else if(inputIdToShow == "req_descrip"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement Description </label>');
@@ -68,7 +69,7 @@ $(document).ready(function() {
             }
             else if(inputIdToShow == "developer"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Developer(s) </label>');
-                $("#headingsRow").append('<th><strong>Developers(s)</strong></th>')
+                $("#headingsRow").append('<th>Developers(s)</th>')
             }
             else if(inputIdToShow == "use_case_ID"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Use case ID </label>');
@@ -189,25 +190,36 @@ function exportCSV() {
   //let csv = 'Name,Title\n';
   let csv = array[0] + ',' + array[1] + '\n'; // Adds Project name and description
 
-  for (let i = 3; i < array.length; i++) {
-    csv += document.getElementById(array[i]).value;
-    if (i == array.length - 1) {
+  let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
+  for(let i = 0; i < tableHeadingsArray.length - 1; i++) {
+    console.log("tableHeadingsArray: " + tableHeadingsArray[i].innerText);
+    csv += tableHeadingsArray[i].innerText; // Adds headings
+    if (i == tableHeadingsArray.length - 2) {
       csv += '\n';
     }
     else {
       csv += ',';
     }
   }
-
-  data.forEach(function(row) {
-          csv += row.join(',');
-          csv += "\n";
+  console.log("csv after headings: " + csv);
+  let rowTemp;
+  tableRow.forEach(function(row) {
+          if (row.length) {
+            rowTemp = row;
+            if (firstExport) {
+              rowTemp.shift();
+            }
+            csv += rowTemp.join(',');
+            csv += "\n";
+          }
   });
 
-  console.log(csv);
-  var hiddenElement = document.createElement('a');
-  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-  hiddenElement.target = '_blank';
-  hiddenElement.download = 'people.csv';
-  hiddenElement.click();
+  firstExport = false;
+
+  console.log("csv after table rows data:" + csv);
+  let hiddenLink = document.createElement('a');
+  hiddenLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  hiddenLink.target = '_blank';
+  hiddenLink.download = 'Traceability_matrix.csv';
+  hiddenLink.click();
 }
