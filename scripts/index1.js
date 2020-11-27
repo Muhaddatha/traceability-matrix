@@ -17,8 +17,8 @@ $(document).ready(function() {
 
 
     //addding project name and project description to table
-    document.getElementById("editable-project-name").innerText += array[0];
-    document.getElementById("editable-project-description").innerText += array[1];
+    document.getElementById("editable-project-name").innerText = array[0];
+    document.getElementById("editable-project-description").innerText = array[1];
 
 
 
@@ -184,6 +184,9 @@ function clearTableHandler(){
 function exportCSV() {
   
     //call function that updates the tableRow array
+    updateTableRowArray();
+    //raise alerts if project name and project description are empty? then call 
+    //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
   let csv = array[0] + ',' + array[1] + '\n'; // Adds Project name and description
@@ -227,9 +230,51 @@ function exportCSV() {
 //This internal function updates the tableRow array based on the edits that are made to each cell
 //It updates the project name and project description too
 //It loops through each data row in table
-function updateTableRow(){
+function updateTableRowArray(){
 
-    let updatedProjectName = $()
+    //structure of array
+    //[0]: Project name
+    //[1]: Project Description
+    //[2]: "ID"
+    //[3-length] : checkbox options array
+
+
+    //structure of tableRow array
+    //[0]: rowID
+    //[1-length]: value for checkboxes
+
+    console.log("Inside updateTableRowArray function.");
+    let updatedProjectName = document.getElementById("editable-project-name").innerText;
+    let updatedProjectDescription = document.getElementById("editable-project-description").innerText;
+    // console.log("Using innerText: " + updatedProjectName.innerText);
+    // console.log("Using value: " + updatedProjectName.value);
+    // console.log("Using textContent: " + updatedProjectName.textContent);
+    // console.log("Using innerHTML: " + updatedProjectName.innerHTML);
+
+
+    if(array[0] != updatedProjectName){
+        //if new project name is different from old project name, update it
+        console.log("Project name changed from: " + array[0] + " to: " + updatedProjectName);
+        console.log("updating the project name...");
+        array[0] = updatedProjectName;
+        console.log("array[0]: " + array[0]);
+    }
+    else{
+        //if project name hasn't changed, do nothing
+        console.log("Project name has not changed.");
+    }
+
+    if(array[1] != updatedProjectDescription){
+        //if new project description is different from old project name, update it
+        console.log("Project description changed from: " + array[1] + " to: " + updatedProjectDescription);
+        console.log("updating the project description...");
+        array[1] = updatedProjectDescription;
+        console.log("array[1]: " + array[1]);
+    }
+    else{
+        //if project description hasn't changed, do nothing
+        console.log("Project description has not changed.");
+    }
 }
 
 
