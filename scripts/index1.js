@@ -112,7 +112,7 @@ $(document).ready(function() {
 });
 
 function handleAddRowForm(e) {
-    
+
     e.preventDefault();
     let rowElement = []; //stores all td's of a signle row
     rowID++; //since we are adding a new row, the ID number is increasing
@@ -129,7 +129,7 @@ function handleAddRowForm(e) {
       $("#row" + rowID).append("<td>" + rowElement[i] + "</td>");
     }
     $("#row" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
-  
+
     //reset form values
     console.log("Resetting the form");
     document.getElementById("add_row_form").reset();
@@ -139,7 +139,7 @@ function handleAddRowForm(e) {
     console.log('tableRow.length after push: ' + tableRow.length);
 
     console.log('tableRow:' + tableRow);
-  
+
 }
 
 
@@ -176,4 +176,26 @@ function deleteRowHandler(idOfRowToBeDeleted){
 function clearTableHandler(){
     console.log("Clearing table rows");
     $("#theMatrix > tbody").empty();
+}
+
+
+function exportCSV() {
+  var data = [
+     ['Foo', 'programmer'],
+     ['Bar', 'bus driver'],
+     ['Moo', 'Reindeer Hunter']
+  ];
+
+  let csv = 'Name,Title\n';
+  data.forEach(function(row) {
+          csv += row.join(',');
+          csv += "\n";
+  });
+
+  console.log(csv);
+  var hiddenElement = document.createElement('a');
+  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  hiddenElement.target = '_blank';
+  hiddenElement.download = 'people.csv';
+  hiddenElement.click();
 }
