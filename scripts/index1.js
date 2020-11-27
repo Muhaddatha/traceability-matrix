@@ -294,17 +294,18 @@ function updateTableRowArray(){
     for(let i = 0; i < HTMLTableRows.length; i++){
 
 
-        // console.log("HTMLTableRows[" + i + "].innerHTML: " + HTMLTableRows[i].innerHTML);
-        console.log("HTMLTableRows[" + i + "].innerText: " + HTMLTableRows[i].innerText);
-        //returns a string of the td's in this row
-
         //make requirement Ids unique?
 
-        // let HTMLTableData = HTMLTableRows[i].getElementsByTagName("td").innerText;
-        // for(let j = 0; j < HTMLTableData[i].length; j++){
-        //     // console.log("inside second for loop in updateTableRowArray");
-        //     console.log("HTMLTableRows[" + i + "][" + j + "].innerText: " + HTMLTableData[j]);
-        // }
+
+        console.log("HTMLTableRows[" + i + "].innerHTML: " + HTMLTableRows[i].innerHTML);
+        console.log("HTMLTableRows[" + i + "].innerText: " + HTMLTableRows[i].innerText);
+
+        let rowInformation = HTMLTableRows[i].getElementsByTagName("td");
+        //arry of td in a row
+        console.log(rowInformation);
+        //returns a string of the td's in this row
+
+      
     }
 }
 
