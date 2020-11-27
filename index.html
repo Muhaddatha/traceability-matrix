@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Tracability Matrix Tiny Tool</title>
     <!-- <link rel="stylesheet" href="styles/styling.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/index.js"></script>
   </head>
@@ -17,6 +18,7 @@
 
         <form id="form" action="index1.html">
 
+          
           <label>Enter project name: </label>
           <input type="text" id="projectName" required>
           <br>
@@ -28,59 +30,73 @@
           <label>ID</label> <span>&#9432;</span>
           <br> -->
 
-
-          <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
-          <label>Requirement ID</label> <span>&#9432;</span>
-          <br>
-
-
-          <input type="checkbox" class="column1" id="req_descrip" name="check">
-          <label>Requirement Description</label> <span>&#9432;</span>
-          <br>
+          <div class="container" id="checkbox-container">
+            <div class="row" id="check-box-row">
+              <div class="col-sm-12 col-md-6" id="checkbox-col1">
+                <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
+                <label>Requirement ID</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column2" id="status" name="check">
-          <label>Status</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column1" id="req_descrip" name="check">
+                <label>Requirement Description</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column1" id="priority" name="check">
-          <label>Priority</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column2" id="status" name="check">
+                <label>Status</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column2" id="class" name="check">
-          <label>Class/Method</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column1" id="priority" name="check">
+                <label>Priority</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column1" id="developer" name="check">
-          <label>Developer</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column2" id="class" name="check">
+                <label>Class/Method</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column2" id="use_case_ID" name="check">
-          <label>Use Case ID</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column1" id="developer" name="check">
+                <label>Developer</label> <span>&#9432;</span>
+                <br>
+
+              </div>
+              <div class="col-sm-12 col-md-6" id="checkbox-col2">
+                <input type="checkbox" class="column2" id="use_case_ID" name="check">
+                <label>Use Case ID</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column1" id="use_case_descrip" name="check">
-          <label>Use Case Description</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column1" id="use_case_descrip" name="check">
+                <label>Use Case Description</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column2" id="test_case_ID" name="check">
-          <label>Test Case ID</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column2" id="test_case_ID" name="check">
+                <label>Test Case ID</label> <span>&#9432;</span>
+                <br>
 
 
-          <input type="checkbox" class="column1" id="test_case_descrip" name="check">
-          <label>Test Case Description</label> <span>&#9432;</span>
-          <br>
+                <input type="checkbox" class="column1" id="test_case_descrip" name="check">
+                <label>Test Case Description</label> <span>&#9432;</span>
+                <br>
+
+                
+                <input type="checkbox" class="column2" id="tester" name="check">
+                <label>Tester</label> <span>&#9432;</span>
+              </div>
+
+            </div>
+
+
+          </div>
 
           
-          <input type="checkbox" class="column2" id="tester" name="check">
-          <label>Tester</label> <span>&#9432;</span>
+
+
+          
           <br>
 
          
