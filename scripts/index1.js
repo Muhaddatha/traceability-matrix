@@ -124,9 +124,9 @@ function handleAddRowForm(e) {
         console.log('rowElement:' + rowElement[i-2]);
     }
 
-    $("#theMatrix").append("<tr id='row" + rowID + "'></tr>");
+    $("#theMatrix").append("<tr id='row" + rowID + "' class='hide'></tr>");
     for(let i = 1; i < rowElement.length; i++) {
-      $("#row" + rowID).append("<td>" + rowElement[i] + "</td>");
+      $("#row" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
     }
     $("#row" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
 

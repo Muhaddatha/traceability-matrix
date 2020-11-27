@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Traceability Matrix Builder</title> <!-- Fix later -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="extensions/editable/bootstrap-table-editable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/index1.js"></script>
   </head>
@@ -27,19 +29,26 @@
       </div>
 
       <br>
-      <table id="theMatrix" border="1">
-        <tr>
-          <th id="project-name-heading">Project name: </th>
-          <th id="project-description-heading">Project description: </th>
-        </tr>
-        <tr id="headingsRow">
-          <!-- <th>ID</th> -->
+      <div id="table" class="table-editable">
+        <table id="theMatrix" class="table table-bordered table-responsive-md table-striped text-center" border="1">
+          <thead>
+            <tr>
+              <th id="project-name-heading" contenteditable="true">Project name: </th>
+              <th id="project-description-heading" contenteditable="true">Project description: </th>
+            </tr>
+            <tr id="headingsRow">
+              <!-- <th>ID</th> -->
+    
+    
+            </tr>
+          </thead>
+          
+  
+  
+        </table>
 
-
-        </tr>
-
-
-      </table>
+      </div>
+      
 
       <footer>
         <br>
