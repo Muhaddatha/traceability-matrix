@@ -125,7 +125,7 @@ function handleAddRowForm(e) {
         console.log('rowElement:' + rowElement[i-2]);
     }
 
-    $("#theMatrix").append("<tr id='row" + rowID + "' class='hide'></tr>");
+    $("tbody").append("<tr id='row" + rowID + "' class='hide'></tr>");
     for(let i = 1; i < rowElement.length; i++) {
       $("#row" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
     }
@@ -176,7 +176,8 @@ function deleteRowHandler(idOfRowToBeDeleted){
 //This function deletes all the table rows
 function clearTableHandler(){
     console.log("Clearing table rows");
-    $("#theMatrix > tbody").empty();
+    $("tbody").empty(); //clears table rows
+    //still need to clear the rows from tableRow array
 }
 
 
