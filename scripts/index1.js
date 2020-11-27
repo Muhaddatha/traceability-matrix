@@ -57,15 +57,15 @@ $(document).ready(function() {
             }
             else if(inputIdToShow == "req_descrip"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement Description </label>');
-                $("#headingsRow").append('<th><strong>Requirement Description</strong></th>')
+                $("#headingsRow").append('<th>Requirement Description</th>')
             }
             else if(inputIdToShow == "status"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Status </label>');
-                $("#headingsRow").append('<th><strong>Status</strong></th>')
+                $("#headingsRow").append('<th>Status</th>')
             }
             else if(inputIdToShow == "class"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Class/Methods/Functions </label>');
-                $("#headingsRow").append('<th><strong>Class/Methods/Functions</strong></th>')
+                $("#headingsRow").append('<th>Class/Methods/Functions</th>')
             }
             else if(inputIdToShow == "developer"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Developer(s) </label>');
@@ -73,23 +73,23 @@ $(document).ready(function() {
             }
             else if(inputIdToShow == "use_case_ID"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Use case ID </label>');
-                $("#headingsRow").append('<th><strong>Use Case ID</strong></th>')
+                $("#headingsRow").append('<th>Use Case ID</th>')
             }
             else if(inputIdToShow == "use_case_descrip"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Use case description </label>');
-                $("#headingsRow").append('<th><strong>Use Case Description</strong></th>')
+                $("#headingsRow").append('<th>Use Case Description</th>')
             }
             else if(inputIdToShow == "test_case_ID"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Test case ID </label>');
-                $("#headingsRow").append('<th><strong>Test Case ID</strong></th>')
+                $("#headingsRow").append('<th>Test Case ID</th>')
             }
             else if(inputIdToShow == "test_case_descrip"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Test case description </label>');
-                $("#headingsRow").append('<th><strong>Test Case Description</strong></th>')
+                $("#headingsRow").append('<th>Test Case Description</th>')
             }
             else if(inputIdToShow == "tester"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Tester </label>');
-                $("#headingsRow").append('<th><strong>Tester</strong></th>')
+                $("#headingsRow").append('<th>Tester</th>')
             }
 
             //Append input field for the user option
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
     }
 
-    $("#headingsRow").append('<th><strong>Delete</strong></th>')
+    $("#headingsRow").append('<th>Delete</th>')
 
     //let rowElement = []; //stores all td's of a signle row
   //  let tableRow = [];
