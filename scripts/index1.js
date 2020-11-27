@@ -92,7 +92,7 @@ $(document).ready(function() {
             }
 
             //Append input field for the user option
-            $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '"> <br>');
+            $("#form-labels-and-input-fields").append('<input type="text" id="' + inputIdToShow + '"> <br>');
 
         }
 
@@ -186,7 +186,19 @@ function exportCSV() {
      ['Moo', 'Reindeer Hunter']
   ];
 
-  let csv = 'Name,Title\n';
+  //let csv = 'Name,Title\n';
+  let csv = array[0] + ',' + array[1] + '\n'; // Adds Project name and description
+
+  for (let i = 3; i < array.length; i++) {
+    csv += document.getElementById(array[i]).value;
+    if (i == array.length - 1) {
+      csv += '\n';
+    }
+    else {
+      csv += ',';
+    }
+  }
+
   data.forEach(function(row) {
           csv += row.join(',');
           csv += "\n";
