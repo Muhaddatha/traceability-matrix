@@ -230,3 +230,11 @@ function exportCSV() {
 function updateTableRow(){
 
 }
+
+
+function handleGoBack() {
+  let choice = confirm("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
+  if (choice) {
+    location.href='index.html';
+  }
+}
