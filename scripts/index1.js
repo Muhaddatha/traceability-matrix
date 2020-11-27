@@ -42,15 +42,7 @@ $(document).ready(function() {
 
             $("#headingsRow").append('<th>Priority</th>')
         }
-        else{ //inputs with selects (priority)
-
-            // if(inputIdToShow == "id"){
-            //     //add label tag
-            //     $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > ID </label>');
-
-            //     $("#form-labels-and-input-fields").append('<input type"text" id="' + inputIdToShow + '" required> <br>');
-            //     continue; //goes back to the top of the loop
-            // }
+        else{ 
             if(inputIdToShow == "req_id"){
                 $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement ID </label>');
                 $("#headingsRow").append('<th>Requirement ID</th>')
@@ -105,13 +97,17 @@ $(document).ready(function() {
 
     $("#headingsRow").append('<th>Delete</th>')
 
-    //let rowElement = []; //stores all td's of a signle row
-  //  let tableRow = [];
+    
+    //Whenever add row form is submitted, call the handler
     $('#add_row_form').submit(handleAddRowForm);
     console.log("Line 96 after submit form event");
 
 });
 
+
+//This function is called whenever the add row form is submitted
+//Updates the DOM by adding a tr element
+//Updates tableRow array by inserting the new rows in the last index
 function handleAddRowForm(e) {
 
     e.preventDefault();
@@ -144,6 +140,7 @@ function handleAddRowForm(e) {
 }
 
 
+//clears form so that user can put in new row information
 function resetForm(){
     //reset form here since 'add!' button clicked
     console.log("restting form values");
@@ -153,6 +150,8 @@ function resetForm(){
 
 }
 
+
+//This function removes a row information from the table and the tableRow array
 function deleteRowHandler(idOfRowToBeDeleted){
 
     console.log("Inside delete row function");
@@ -181,12 +180,10 @@ function clearTableHandler(){
 }
 
 
+//function that puts all the table information into a csv file to be exported
 function exportCSV() {
-  var data = [
-     ['Foo', 'programmer'],
-     ['Bar', 'bus driver'],
-     ['Moo', 'Reindeer Hunter']
-  ];
+  
+    //call function that updates the tableRow array
 
   //let csv = 'Name,Title\n';
   let csv = array[0] + ',' + array[1] + '\n'; // Adds Project name and description
@@ -223,4 +220,13 @@ function exportCSV() {
   hiddenLink.target = '_blank';
   hiddenLink.download = 'Traceability_matrix.csv';
   hiddenLink.click();
+}
+
+
+
+//This internal function updates the tableRow array based on the edits that are made to each cell
+//It updates the project name and project description too
+//It loops through each data row in table
+function updateTableRow(){
+
 }
