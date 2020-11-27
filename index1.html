@@ -33,8 +33,17 @@
         <table id="theMatrix" class="table table-bordered table-responsive-md table-striped text-center" border="1">
           <thead>
             <tr>
-              <th id="project-name-heading" contenteditable="true">Project name: </th>
-              <th id="project-description-heading" contenteditable="true">Project description: </th>
+              <th id="project-name-heading" contenteditable="false">
+                Project name:
+                <!-- User defined project name will be stored in this span tag
+                The reason is that if the project name is not inside it's own block, the user will be able to change "Project name:" part of the table -->
+                <span contenteditable="true" id="editable-project-name"></span> 
+              </th>
+              <th id="project-description-heading" contenteditable="false">
+                Project description: 
+                <!-- Same reasoning as above -->
+                <span contenteditable="true" id="editable-project-description"></span>
+              </th>
             </tr>
             <tr id="headingsRow">
               <!-- <th>ID</th> -->

@@ -17,8 +17,8 @@ $(document).ready(function() {
 
 
     //addding project name and project description to table
-    document.getElementById("project-name-heading").innerText += array[0];
-    document.getElementById("project-description-heading").innerText += array[1];
+    document.getElementById("editable-project-name").innerText += array[0];
+    document.getElementById("editable-project-description").innerText += array[1];
 
 
 
@@ -229,6 +229,7 @@ function exportCSV() {
 //It loops through each data row in table
 function updateTableRow(){
 
+    let updatedProjectName = $()
 }
 
 
