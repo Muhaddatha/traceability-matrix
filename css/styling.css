@@ -16,7 +16,7 @@ input, textarea {
   outline: none;
   background-color: AliceBlue;
 }
-/* 
+/*
  input[type="checkbox"] {
   height: 20px;
   width: 20px;
@@ -41,6 +41,7 @@ input, textarea {
 }
 
  #continueButton {
+  cursor: pointer;
   font-size: 150%;
   float: right;
   margin-right: 3%;
