@@ -16,24 +16,24 @@ input, textarea {
   outline: none;
   background-color: AliceBlue;
 }
-
-input[type="checkbox"] {
+/* 
+ input[type="checkbox"] {
   height: 20px;
   width: 20px;
   appearance: none;
   background-color: AliceBlue;
   cursor: pointer;
-}
+} */
 
-input[type="checkbox"]:checked + label::before {
+/*input[type="checkbox"]:checked + label::before {
   background-color: AliceBlue;
-  content: '\2713';
+  /* content: '\2713';
   font-size: 75%;
   color: black;
   position: absolute;
   left: 1.3rem;
   top: 0.01rem;
-}
+} */
 
 #align_text_box {
   float: left;
