@@ -8,6 +8,7 @@ body {
   width: 80%;
   background-color: #b3dbff;
   padding: 1%;
+  padding-bottom: 4%;
 }
 
 input, textarea {
@@ -16,11 +17,22 @@ input, textarea {
   background-color: AliceBlue;
 }
 
-.check_style {
-  border: none;
-  outline: none;
-  color: red;
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  background-color: AliceBlue;
+  cursor: pointer;
+}
 
+input[type="checkbox"]:checked + label::before {
+  background-color: AliceBlue;
+  content: '\2713';
+  font-size: 75%;
+  color: black;
+  position: absolute;
+  left: 1.3rem;
+  top: 0.01rem;
 }
 
 #align_text_box {
@@ -28,9 +40,8 @@ input, textarea {
   margin-right: 1em;
 }
 
-#continueButton {
+ #continueButton {
   font-size: 150%;
   float: right;
-  margin-top: -5%;
   margin-right: 3%;
 }
