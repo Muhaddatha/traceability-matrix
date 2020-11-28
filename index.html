@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Tracability Matrix Tiny Tool</title>
-     
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="styles/styling.css"> -->
+    <link rel="stylesheet" href="css/styling.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/index.js"></script>
   </head>
   <body>
       <header>
-        <p>Welcome to the Tracability Matrix Builder Tiny Tool</p>
-        
+        <h1>Welcome to the Tracability Matrix Builder Tiny Tool</h1>
+
       </header>
       <main>
-        <p>Choose table headings</p>
+        <h3>Choose table headings</h3>
 
         <form id="form" action="index1.html">
 
-          
-          <label>Enter project name: </label>
+
+          <br><label id="align_text_box">Enter project name: </label>
           <input type="text" id="projectName" required>
-          <br>
-          <label>Enter project description: </label>
+          <br><br>
+          <label id="align_text_box">Enter project description: </label>
           <textarea id="projectDescription" rows="4" cols="50" required></textarea>
 
-          <br>
+          <br><br>
           <!-- <input type="checkbox" class="column1" id="id" name="check">
           <label>ID</label> <span>&#9432;</span>
           <br> -->
@@ -35,12 +35,14 @@
             <div class="row" id="check-box-row">
               <div class="col-sm-12 col-md-6" id="checkbox-col1">
                 <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
-                <label>Requirement ID</label> 
-                 <span title="Identifier of a functional, non-functional, or business requiremen."> &#9432;</span>
+                <label>Requirement ID</label>
+                 <span title="Identifier of a functional, non-functional, or business requirement."> &#9432;</span>
                 <br>
 
 
+
                 <input type="checkbox" class="column1" id="req_descrip" name="check">
+                <span class="check_style"></span>
                 <label>Requirement Description</label> <span>&#9432;</span>
                 <br>
 
@@ -85,7 +87,7 @@
                 <label>Test Case Description</label> <span>&#9432;</span>
                 <br>
 
-                
+
                 <input type="checkbox" class="column2" id="tester" name="check">
                 <label>Tester</label> <span>&#9432;</span>
               </div>
@@ -95,23 +97,23 @@
 
           </div>
 
-          
 
 
-          
+
+
           <br>
 
-         
+
           <input type="submit" id="continueButton" value="Continue">
-         
+
 
         </form>
-         
+
 
       </main>
       <footer>
-        
-        
+
+
       </footer>
   </body>
 </html>

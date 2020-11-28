@@ -1,0 +1,36 @@
+html {
+  background-color: Azure;
+}
+
+body {
+  margin: auto;
+  margin-top: 1%;
+  width: 80%;
+  background-color: #b3dbff;
+  padding: 1%;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  background-color: AliceBlue;
+}
+
+.check_style {
+  border: none;
+  outline: none;
+  color: red;
+
+}
+
+#align_text_box {
+  float: left;
+  margin-right: 1em;
+}
+
+#continueButton {
+  font-size: 150%;
+  float: right;
+  margin-top: -5%;
+  margin-right: 3%;
+}
