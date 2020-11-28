@@ -180,6 +180,11 @@ function clearTableHandler(){
     console.log("Clearing table rows");
     $("tbody").empty(); //clears table rows
     //still need to clear the rows from tableRow array
+    while(tableRow.length > 0){
+        tableRow.pop();
+    }
+    console.log("tableRow array after clearing it: " + tableRow);
+    rowID = 0;
 }
 
 
