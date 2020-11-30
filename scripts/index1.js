@@ -123,11 +123,11 @@ function handleAddRowForm(e) {
         console.log('rowElement:' + rowElement[i-2]);
     }
 
-    $("tbody").append("<tr id='row" + rowID + "' class='hide'></tr>");
+    $("tbody").append("<tr id='" +  rowID + "' class='hide'></tr>");
     for(let i = 1; i < rowElement.length; i++) {
-      $("#row" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
+      $("#" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
     }
-    $("#row" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
+    $("#" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
 
     //reset form values
     console.log("Resetting the form");
@@ -168,7 +168,7 @@ function deleteRowHandler(idOfRowToBeDeleted){
     //row removed from tableRow array and initialized to []
 
     //step2: delete tr from matrix
-    $('#row' + idOfRowToBeDeleted).remove();
+    $('#' + idOfRowToBeDeleted).remove();
     console.log("Row removed from table");
 
 }
@@ -296,19 +296,44 @@ function updateTableRowArray(){
         console.log("No table rows exist in the table.");
     }
     console.log("All user-made HTML table rows: ");
+    
+
     for(let i = 0; i < HTMLTableRows.length; i++){
-
-
-        //make requirement Ids unique?
-
 
         console.log("HTMLTableRows[" + i + "].innerHTML: " + HTMLTableRows[i].innerHTML);
         console.log("HTMLTableRows[" + i + "].innerText: " + HTMLTableRows[i].innerText);
+
+        let rowId = HTMLTableRows[i].id; //rowId
 
         let rowInformation = HTMLTableRows[i].getElementsByTagName("td");
         //arry of td in a row
         console.log(rowInformation);
         //returns a string of the td's in this row
+
+        let indexOfRowInTableRowArray = 0;
+        for(let k = 0; k < tableRow.length; k++){
+
+            if(tableRow[k].length > 0 && tableRow[k][0] == rowId){
+                //found index of row in tableRow array
+                console.log("Index of row with the id of " + rowId + " in the rowTable array is :" + k);
+                indexOfRowInTableRowArray = k;
+                k = tableRow.length;
+            }
+        }
+
+        for(let j = 0; j < rowInformation.length; j++){
+
+            //updating a particular row that the user has editted
+            if(tableRow[indexOfRowInTableRowArray][j + 1] != rowInformation[j].innerText){
+                console.log("Replacing tableRow[" + indexOfRowInTableRowArray + "][" + (j + 1) + "]:" + tableRow[indexOfRowInTableRowArray][j + 1] + " with rowinformation[" + j + "]: " + rowInformation[j].innerText);
+                tableRow[indexOfRowInTableRowArray][j + 1] = rowInformation[j].innerText;
+            }
+            else{
+                //no change necessary
+                console.log("Equal values in tableRow[" + indexOfRowInTableRowArray + "][" + (j + 1) + "]: " + tableRow[indexOfRowInTableRowArray][j + 1] + " and rowinformation[" + j + "]: " + rowInformation[j].innerText);
+            }
+            
+        }
 
       
     }
