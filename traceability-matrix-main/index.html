@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tracability Matrix Tiny Tool</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styling.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+  </head>
+  <body>
+      <header>
+        <h1>Welcome to the Tracability Matrix Builder Tiny Tool</h1>
+
+      </header>
+      <main>
+
+        <form id="form" action="index1.html">
+
+
+          <br><label id="align_text_box" class="aligningFirst">Enter project name: </label>
+          <input type="text" id="projectName" required>
+          <br><br>
+          <label id="align_text_box" class="aligningFirst">Enter project description: </label>
+          <textarea id="projectDescription" rows="4" cols="50" required></textarea>
+          <br><br>
+          <h3>Choose table headings</h3>
+          <br>
+          <!-- <input type="checkbox" class="column1" id="id" name="check">
+          <label>ID</label> <span>&#9432;</span>
+          <br> -->
+
+          <div class="container" id="checkbox-container">
+            <div class="row" id="check-box-row">
+              <div class="col-sm-12 col-md-6" id="checkbox-col1">
+                <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
+                <label>Requirement ID</label>
+                 <span title="Identifier of a functional, non-functional, or business requirement."> &#9432;</span>
+                <br>
+
+
+
+                <input type="checkbox" class="column1" id="req_descrip" name="check">
+                <label>Requirement Description</label> <span title="Short explanation of user requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column2" id="status" name="check">
+                <label>Status</label> <span title="State of progress for requirement implementation.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column1" id="priority" name="check">
+                <label>Priority</label> <span title="Importance ranking of requirement being implemented.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column2" id="class" name="check">
+                <label>Class/Method/Functions</label> <span title="Class, method, or function that implements user requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column1" id="developer" name="check">
+                <label>Developer</label> <span title="Name of the person(s) implementing the requirement">&#9432;</span>
+                <br>
+
+              </div>
+              <div class="col-sm-12 col-md-6" id="checkbox-col2">
+                <input type="checkbox" class="column2" id="use_case_ID" name="check">
+                <label>Use Case ID</label> <span title="Identifier of the use case that is related to the requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column1" id="use_case_descrip" name="check">
+                <label>Use Case Description</label> <span title="Short explanation of the use case for the requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column2" id="test_case_ID" name="check">
+                <label>Test Case ID</label> <span title="Identifier of test case that is related to the requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column1" id="test_case_descrip" name="check">
+                <label>Test Case Description</label> <span title="Short explanation of the test to be used for the requirement.">&#9432;</span>
+                <br>
+
+
+                <input type="checkbox" class="column2" id="tester" name="check">
+                <label>Tester</label> <span title="Name of the person(s) testing the requirement.">&#9432;</span>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+
+
+          <input type="submit" id="continueButton" value="Continue">
+
+
+        </form>
+
+
+      </main>
+      <footer>
+
+
+      </footer>
+  </body>
+</html>

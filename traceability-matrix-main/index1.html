@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Traceability Matrix Builder</title> <!-- Fix later -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styling.css">
+    <script src="extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/index1.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Table builder</h1>
+      <br>
+    </header>
+
+    <main>
+      <div>
+        <h2 id="add_new_row_h2">Add new row</h2>
+        <form action="#" id="add_row_form">
+
+          <div id="form-labels-and-input-fields">
+
+            <!-- Form inputs appended here dynamically -->
+
+          </div>
+
+          <input type="submit" id="add_btn" value="Add">
+        </form>
+      </div>
+
+      <br>
+      <div id="table" class="table-editable">
+        <table id="theMatrix" class="table table-bordered table-responsive-md table-striped text-center" border="1">
+          <thead>
+            <tr>
+              <th id="project-name-heading" contenteditable="false">
+                Project name:
+                <!-- User defined project name will be stored in this span tag
+                The reason is that if the project name is not inside it's own block, the user will be able to change "Project name:" part of the table -->
+                <span contenteditable="true" id="editable-project-name"></span>
+              </th>
+              <th id="project-description-heading" contenteditable="false">
+                Project description:
+                <!-- Same reasoning as above -->
+                <span contenteditable="true" id="editable-project-description"></span>
+              </th>
+            </tr>
+            <tr id="headingsRow">
+              <!-- <th>ID</th> -->
+
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+          </tbody>
+
+
+        </table>
+
+      </div>
+
+
+      <footer>
+        <br>
+        <input type="button" value="Go back" id="go_back_btn" onclick="handleGoBack()"><br>
+        <input type="button" value="Export CSV" id="export_csv_btn" onclick="exportCSV();"><br>
+        <input type="button" value="Clear" id="clear_btn" onclick="clearTableHandler();">
+      </footer>
+    </main>
+  </body>
+</html>
