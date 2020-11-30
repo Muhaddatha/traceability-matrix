@@ -10,11 +10,11 @@ $(document).ready(function(){ //waits until document is fully loaded
 
 
     //checks to see if at-least one checkbox is selected
-    if(!$("#check_one input").is(' :checked')){
+    if(!$("input").is(' :checked')){
       e.preventDefault();
 
-      alert("You must have at least two checkboxes checked");
-      console.log("Error: User didn't select a second checkbox.");
+      alert("You must have at least one checkbox checked");
+      console.log("Error: User didn't select any checkboxes.");
 
     }
     else{ //if at-least one checkbox is selected
@@ -22,7 +22,7 @@ $(document).ready(function(){ //waits until document is fully loaded
 
       console.log("All validations passed.");
 
-
+      
       //have already passed validation check so they are not empty
       const projectName = document.getElementById("projectName").value;
       const projectDescription = document.getElementById("projectDescription").value;
@@ -34,7 +34,7 @@ $(document).ready(function(){ //waits until document is fully loaded
       passedArray[1] = projectDescription;
       passedArray[2] = "ID"; //Since project ID is not option, we have it hardcoded as a row element. In the second page, we'll auto increment the ID everytime a row is added. We'll decrement the iD everytime a row is removed. So, the selected checkbox ids start from index 3 of the passed array
 
-
+     
       console.log("Project name inputted (passedArray[0]): " + passedArray[0]);
       console.log("Project description inputted(passedArray[1]): " + passedArray[1]);
 
@@ -46,7 +46,7 @@ $(document).ready(function(){ //waits until document is fully loaded
       for (let i = 0; i < checkboxes.length; i++) {
         //putting the id of checkboxes selected by the user into the passedArray
         if (checkboxes[i].checked) {
-
+  
           passedArray[counter] = checkboxes[i].id;
           console.log("Id of checkbox: " + checkboxes[i].id);
 
@@ -55,7 +55,7 @@ $(document).ready(function(){ //waits until document is fully loaded
           counter++;
         }
       }
-
+      
     }
 
     //send array to next page via session storage

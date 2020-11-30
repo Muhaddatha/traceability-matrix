@@ -1,5 +1,5 @@
 let tableRow = Array(); //collection of row elements in a 2-D array
-let array;
+let pageOneInputrray;
 let firstExport = true;
 
 let rowID = 0; //global variable to keep track of row ids that are auto incremented
@@ -7,36 +7,36 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 $(document).ready(function() {
 
 
-    array = JSON.parse(sessionStorage.getItem("matrixStorage"));
-    //array received from the first page
+    pageOneInputrray = JSON.parse(sessionStorage.getItem("matrixStorage"));
+    //pageOneInputrray received from the first page
 
     console.log("Information sent from first page: ");
-    console.log(array); //JSON object with array of information from + length attribute
-    console.log(array[0]);
+    console.log(pageOneInputrray); //JSON object with array of information from + length attribute
+    console.log(pageOneInputrray[0]);
 
 
 
     //addding project name and project description to table
-    document.getElementById("editable-project-name").innerText = array[0];
-    document.getElementById("editable-project-description").innerText = array[1];
+    document.getElementById("editable-project-name").innerText = pageOneInputrray[0];
+    document.getElementById("editable-project-description").innerText = pageOneInputrray[1];
 
 
 
 
-    console.log(array.length);
+    console.log(pageOneInputrray.length);
     let inputIdToShow;
 
     let formDiv = $("#form-labels-and-input-fields"); //gets element by ID
 
     //adds row input fields dynamically to the form
-    for(let i = 3; i < array.length; i++){
+    for(let i = 3; i < pageOneInputrray.length; i++){
 
-        inputIdToShow = array[i];
+        inputIdToShow = pageOneInputrray[i];
 
-        //create an input label and input field depending on array[i] value
+        //create an input label and input field depending on pageOneInputrray[i] value
         if(inputIdToShow == 'priority'){ //needs select tag + label
 
-            $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Priority </label>');
+            $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Priority: </label>');
             $("#form-labels-and-input-fields").append('<select id="' + inputIdToShow + '"> <select id="' + inputIdToShow + '"></select> <br>');
             $("#priority").append('"<option value="blank"> </option><option value="low">Low</option> <option value="medium">Medium</option> <option value="high">High</option>"');
 
@@ -44,45 +44,45 @@ $(document).ready(function() {
         }
         else{ 
             if(inputIdToShow == "req_id"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement ID </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Requirement ID: </label>');
                 $("#headingsRow").append('<th>Requirement ID</th>');
                 $("#form-labels-and-input-fields").append('<input type="text" id="' + inputIdToShow + '" required> <br>');
                 continue;
             }
             else if(inputIdToShow == "req_descrip"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Requirement Description </label>');
+                $("#form-labels-and-input-fields").append('<label id="req_des" class="aligningSecond" for="' + inputIdToShow + '" > Requirement Description: </label>');
                 $("#headingsRow").append('<th>Requirement Description</th>')
             }
             else if(inputIdToShow == "status"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Status </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Status: </label>');
                 $("#headingsRow").append('<th>Status</th>')
             }
             else if(inputIdToShow == "class"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Class/Methods/Functions </label>');
+                $("#form-labels-and-input-fields").append('<label id="classmethfunc" class="aligningSecond" for="' + inputIdToShow + '" > Class/Methods/Functions: </label>');
                 $("#headingsRow").append('<th>Class/Methods/Functions</th>')
             }
             else if(inputIdToShow == "developer"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Developer(s) </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Developer(s): </label>');
                 $("#headingsRow").append('<th>Developers(s)</th>')
             }
             else if(inputIdToShow == "use_case_ID"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Use case ID </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Use case ID: </label>');
                 $("#headingsRow").append('<th>Use Case ID</th>')
             }
             else if(inputIdToShow == "use_case_descrip"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Use case description </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Use case description: </label>');
                 $("#headingsRow").append('<th>Use Case Description</th>')
             }
             else if(inputIdToShow == "test_case_ID"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Test case ID </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Test case ID: </label>');
                 $("#headingsRow").append('<th>Test Case ID</th>')
             }
             else if(inputIdToShow == "test_case_descrip"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Test case description </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Test case description: </label>');
                 $("#headingsRow").append('<th>Test Case Description</th>')
             }
             else if(inputIdToShow == "tester"){
-                $("#form-labels-and-input-fields").append('<label for="' + inputIdToShow + '" > Tester </label>');
+                $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Tester: </label>');
                 $("#headingsRow").append('<th>Tester</th>')
             }
 
@@ -118,8 +118,8 @@ function handleAddRowForm(e) {
 
     rowElement[0] = rowID; //The first index of rowElement stores the rowID that is autoincremented everytine 'Add!' button is clicked
 
-    for(let i = 3; i < array.length; i++){
-        rowElement[i-2] = document.getElementById(array[i]).value;
+    for(let i = 3; i < pageOneInputrray.length; i++){
+        rowElement[i-2] = document.getElementById(pageOneInputrray[i]).value;
         console.log('rowElement:' + rowElement[i-2]);
     }
 
@@ -127,7 +127,7 @@ function handleAddRowForm(e) {
     for(let i = 1; i < rowElement.length; i++) {
       $("#" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
     }
-    $("#" + rowID).append("<input type='button' id=" + rowID + " value='Delete!' onclick='deleteRowHandler(this.id)'>");
+    $("#" + rowID).append("<input type='button' class='aDeleteButton' id=" + rowID + " value='Delete' onclick='deleteRowHandler(this.id)'>");
 
     //reset form values
     console.log("Resetting the form");
@@ -178,13 +178,16 @@ function deleteRowHandler(idOfRowToBeDeleted){
 //Precondition: Matrix has atleast one row
 function clearTableHandler(){
     console.log("Clearing table rows");
-    $("tbody").empty(); //clears table rows
-    //still need to clear the rows from tableRow array
-    while(tableRow.length > 0){
-        tableRow.pop();
+    let choice = confirm("Warning: your traceability matrix will be cleared if you proceed.\nDo you want to continue?");
+    if (choice) {
+        $("tbody").empty(); //clears table rows
+        //still need to clear the rows from tableRow array
+        while(tableRow.length > 0){
+            tableRow.pop();
+        }
+        console.log("tableRow array after clearing it: " + tableRow);
+        rowID = 0;
     }
-    console.log("tableRow array after clearing it: " + tableRow);
-    rowID = 0;
 }
 
 
@@ -200,7 +203,7 @@ function exportCSV() {
     //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
-  let csv = array[0] + ',' + array[1] + '\n'; // Adds Project name and description
+  let csv = pageOneInputrray[0] + ',' + pageOneInputrray[1] + '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
   for(let i = 0; i < tableHeadingsArray.length - 1; i++) {
@@ -243,11 +246,11 @@ function exportCSV() {
 //It loops through each data row in table
 function updateTableRowArray(){
 
-    //structure of array
+    //structure of pageOneInputrray
     //[0]: Project name
     //[1]: Project Description
     //[2]: "ID"
-    //[3-length] : checkbox options array
+    //[3-length] : checkbox options pageOneInputrray
 
 
     //structure of tableRow array
@@ -263,24 +266,24 @@ function updateTableRowArray(){
     // console.log("Using innerHTML: " + updatedProjectName.innerHTML);
 
 
-    if(array[0] != updatedProjectName){
+    if(pageOneInputrray[0] != updatedProjectName){
         //if new project name is different from old project name, update it
-        console.log("Project name changed from: " + array[0] + " to: " + updatedProjectName);
+        console.log("Project name changed from: " + pageOneInputrray[0] + " to: " + updatedProjectName);
         console.log("updating the project name...");
-        array[0] = updatedProjectName;
-        console.log("array[0]: " + array[0]);
+        pageOneInputrray[0] = updatedProjectName;
+        console.log("pageOneInputrray[0]: " + pageOneInputrray[0]);
     }
     else{
         //if project name hasn't changed, do nothing
         console.log("Project name has not changed.");
     }
 
-    if(array[1] != updatedProjectDescription){
+    if(pageOneInputrray[1] != updatedProjectDescription){
         //if new project description is different from old project name, update it
-        console.log("Project description changed from: " + array[1] + " to: " + updatedProjectDescription);
+        console.log("Project description changed from: " + pageOneInputrray[1] + " to: " + updatedProjectDescription);
         console.log("updating the project description...");
-        array[1] = updatedProjectDescription;
-        console.log("array[1]: " + array[1]);
+        pageOneInputrray[1] = updatedProjectDescription;
+        console.log("pageOneInputrray[1]: " + pageOneInputrray[1]);
     }
     else{
         //if project description hasn't changed, do nothing

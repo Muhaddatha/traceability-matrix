@@ -46,3 +46,48 @@ input, textarea {
   float: right;
   margin-right: 3%;
 }
+
+label {
+	padding-right: 1em;
+}
+
+.aligningFirst {
+	width: 10em;
+	display: inline-block;
+	text-align: right;
+}
+.aligningSecond {
+	width: 13em;
+	display: inline-block;
+	text-align: right;
+}
+
+#add_new_row_h2 {
+	margin-bottom: .5em;
+}
+
+#add_btn {
+	margin-top: .5em;
+	background-color: #56E01C;
+	color: white;
+	font-size: 120%;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.aDeleteButton {
+	margin-top: .5em;
+	background-color: #FF5B38;
+	color: white;
+	cursor: pointer;
+	font-size: 120%;
+}
+
+#go_back_btn {
+	margin-bottom: .3em;
+}
+
+#export_csv_btn {
+	margin-bottom: .3em;
+	margin-top: .3em;
+}
