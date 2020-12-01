@@ -17,7 +17,7 @@
 
     <main>
       <div>
-        <h2 id="add_new_row_h2">Add new row</h2>
+        <h2 id="add_new_row_h2">Add A New Row</h2>
         <form action="#" id="add_row_form">
 
           <div id="form-labels-and-input-fields">
@@ -26,7 +26,7 @@
 
           </div>
 
-          <input type="submit" id="add_btn" value="Add">
+          <input type="submit" class="pageTwoButton" id="add_btn" value="Add">
         </form>
       </div>
 
@@ -60,15 +60,19 @@
 
 
         </table>
-
+        <p>Tip: You can change the project name, the project description, or the values of a row by clicking on those cells inside the matrix.</p>
       </div>
 
 
       <footer>
         <br>
-        <input type="button" value="Go back" id="go_back_btn" onclick="handleGoBack()"><br>
-        <input type="button" value="Export CSV" id="export_csv_btn" onclick="exportCSV();"><br>
-        <input type="button" value="Clear" id="clear_btn" onclick="clearTableHandler();">
+        <table id="tableOfButtons">
+          <tr>
+            <td><input type="button" value="Go back" class="pageTwoButton" id="go_back_btn" onclick="handleGoBack()"></td>
+            <td id="sev2"><input type="button" value="Clear" class="pageTwoButton" id="clear_btn" onclick="clearTableHandler();"></td>
+            <td id="sev1"><input type="button" value="Export CSV" class="pageTwoButton" id="export_csv_btn" onclick="exportCSV();"></td>
+          </tr>
+        </table>
       </footer>
     </main>
   </body>

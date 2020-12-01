@@ -38,7 +38,7 @@ $(document).ready(function() {
 
             $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Priority: </label>');
             $("#form-labels-and-input-fields").append('<select id="' + inputIdToShow + '"> <select id="' + inputIdToShow + '"></select> <br>');
-            $("#priority").append('"<option value="blank"> </option><option value="low">Low</option> <option value="medium">Medium</option> <option value="high">High</option>"');
+            $("#priority").append('"<option value="Custom">Custom</option><option value="low">Low</option> <option value="medium">Medium</option> <option value="high">High</option>"');
 
             $("#headingsRow").append('<th>Priority</th>')
         }

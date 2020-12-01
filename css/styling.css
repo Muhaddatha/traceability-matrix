@@ -73,21 +73,46 @@ label {
 	font-size: 120%;
 	padding-left: 2em;
 	padding-right: 2em;
+  margin-left: 8em;
 }
 
 .aDeleteButton {
-	margin-top: .5em;
+	margin-top: .45em;
 	background-color: #FF5B38;
 	color: white;
 	cursor: pointer;
 	font-size: 120%;
 }
 
-#go_back_btn {
-	margin-bottom: .3em;
-}
-
 #export_csv_btn {
 	margin-bottom: .3em;
 	margin-top: .3em;
+}
+
+.pageTwoButton {
+  cursor: pointer; 
+}
+
+h1 {
+  text-shadow: .025em .05em blue;
+  border: .1em dotted blue;
+  font-family: Comic Sans MS;
+  text-align: center;
+  padding-bottom: .15em;
+}
+
+form span[title] {
+  margin-left: -1em;
+}
+
+#tableOfButtons {
+  border-collapse: collapse;
+  width: 120%;
+}
+
+#sev2 {
+  margin-left: 80em;
+}
+#sev1 {
+  margin-left: 160em;
 }
