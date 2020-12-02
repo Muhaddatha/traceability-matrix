@@ -180,7 +180,7 @@ function clearTableHandler(){
     console.log("Clearing table rows");
     let choice = confirm("Warning: your traceability matrix will be cleared if you proceed.\nDo you want to continue?");
     if (choice) {
-        $("tbody").empty(); //clears table rows
+        $("#theMatrix tbody").empty(); //clears table rows
         //still need to clear the rows from tableRow array
         while(tableRow.length > 0){
             tableRow.pop();
