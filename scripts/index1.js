@@ -42,7 +42,7 @@ $(document).ready(function() {
 
             $("#headingsRow").append('<th>Priority</th>')
         }
-        else{ 
+        else{
             if(inputIdToShow == "req_id"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Requirement ID: </label>');
                 $("#headingsRow").append('<th>Requirement ID</th>');
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
     $("#headingsRow").append('<th>Delete</th>')
 
-    
+
     //Whenever add row form is submitted, call the handler
     $('#add_row_form').submit(handleAddRowForm);
     console.log("Line 96 after submit form event");
@@ -193,13 +193,13 @@ function clearTableHandler(){
 
 //function that puts all the table information into a csv file to be exported
 function exportCSV() {
-  
+
     //call function that updates the tableRow array
     updateTableRowArray();
-    //raise alerts if project name and project description are empty? 
+    //raise alerts if project name and project description are empty?
     //raise alerts if no rows are in the table?
     //add test cases to test plan document?
-    //then call 
+    //then call
     //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
@@ -220,7 +220,9 @@ function exportCSV() {
   let rowTemp;
   tableRow.forEach(function(row) {
           if (row.length) {
-            rowTemp = row;
+            for(let i = 0; i < row.length; i++) {
+              rowTemp[i] = '\"' + row[i] + '\"';
+            }
             if (firstExport) {
               rowTemp.shift();
             }
@@ -299,7 +301,7 @@ function updateTableRowArray(){
         console.log("No table rows exist in the table.");
     }
     console.log("All user-made HTML table rows: ");
-    
+
 
     for(let i = 0; i < HTMLTableRows.length; i++){
 
@@ -335,10 +337,10 @@ function updateTableRowArray(){
                 //no change necessary
                 console.log("Equal values in tableRow[" + indexOfRowInTableRowArray + "][" + (j + 1) + "]: " + tableRow[indexOfRowInTableRowArray][j + 1] + " and rowinformation[" + j + "]: " + rowInformation[j].innerText);
             }
-            
+
         }
 
-      
+
     }
 }
 
