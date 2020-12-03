@@ -1,5 +1,5 @@
 let tableRow = Array(); //collection of row elements in a 2-D array
-let pageOneInputrray;
+let pageOneInputArray;
 let firstExport = true;
 
 let rowID = 0; //global variable to keep track of row ids that are auto incremented
@@ -7,33 +7,33 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 $(document).ready(function() {
 
 
-    pageOneInputrray = JSON.parse(sessionStorage.getItem("matrixStorage"));
-    //pageOneInputrray received from the first page
+    pageOneInputArray = JSON.parse(sessionStorage.getItem("matrixStorage"));
+    //pageOneInputArray received from the first page
 
     console.log("Information sent from first page: ");
-    console.log(pageOneInputrray); //JSON object with array of information from + length attribute
-    console.log(pageOneInputrray[0]);
+    console.log(pageOneInputArray); //JSON object with array of information from + length attribute
+    console.log(pageOneInputArray[0]);
 
 
 
     //addding project name and project description to table
-    document.getElementById("editable-project-name").innerText = pageOneInputrray[0];
-    document.getElementById("editable-project-description").innerText = pageOneInputrray[1];
+    document.getElementById("editable-project-name").innerText = pageOneInputArray[0];
+    document.getElementById("editable-project-description").innerText = pageOneInputArray[1];
 
 
 
 
-    console.log(pageOneInputrray.length);
+    console.log(pageOneInputArray.length);
     let inputIdToShow;
 
     let formDiv = $("#form-labels-and-input-fields"); //gets element by ID
 
     //adds row input fields dynamically to the form
-    for(let i = 3; i < pageOneInputrray.length; i++){
+    for(let i = 3; i < pageOneInputArray.length; i++){
 
-        inputIdToShow = pageOneInputrray[i];
+        inputIdToShow = pageOneInputArray[i];
 
-        //create an input label and input field depending on pageOneInputrray[i] value
+        //create an input label and input field depending on pageOneInputArray[i] value
         if(inputIdToShow == 'priority'){ //needs select tag + label
 
             $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Priority: </label>');
@@ -118,8 +118,8 @@ function handleAddRowForm(e) {
 
     rowElement[0] = rowID; //The first index of rowElement stores the rowID that is autoincremented everytine 'Add!' button is clicked
 
-    for(let i = 3; i < pageOneInputrray.length; i++){
-        rowElement[i-2] = document.getElementById(pageOneInputrray[i]).value;
+    for(let i = 3; i < pageOneInputArray.length; i++){
+        rowElement[i-2] = document.getElementById(pageOneInputArray[i]).value;
         console.log('rowElement:' + rowElement[i-2]);
     }
 
@@ -203,7 +203,7 @@ function exportCSV() {
     //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
-  let csv = pageOneInputrray[0] + ',' + pageOneInputrray[1] + '\n'; // Adds Project name and description
+  let csv = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
   for(let i = 0; i < tableHeadingsArray.length - 1; i++) {
@@ -216,8 +216,9 @@ function exportCSV() {
       csv += ',';
     }
   }
+  
   console.log("csv after headings: " + csv);
-  let rowTemp;
+  let rowTemp = [];
   tableRow.forEach(function(row) {
           if (row.length) {
             for(let i = 0; i < row.length; i++) {
@@ -248,11 +249,11 @@ function exportCSV() {
 //It loops through each data row in table
 function updateTableRowArray(){
 
-    //structure of pageOneInputrray
+    //structure of pageOneInputArray
     //[0]: Project name
     //[1]: Project Description
     //[2]: "ID"
-    //[3-length] : checkbox options pageOneInputrray
+    //[3-length] : checkbox options pageOneInputArray
 
 
     //structure of tableRow array
@@ -268,24 +269,24 @@ function updateTableRowArray(){
     // console.log("Using innerHTML: " + updatedProjectName.innerHTML);
 
 
-    if(pageOneInputrray[0] != updatedProjectName){
+    if(pageOneInputArray[0] != updatedProjectName){
         //if new project name is different from old project name, update it
-        console.log("Project name changed from: " + pageOneInputrray[0] + " to: " + updatedProjectName);
+        console.log("Project name changed from: " + pageOneInputArray[0] + " to: " + updatedProjectName);
         console.log("updating the project name...");
-        pageOneInputrray[0] = updatedProjectName;
-        console.log("pageOneInputrray[0]: " + pageOneInputrray[0]);
+        pageOneInputArray[0] = updatedProjectName;
+        console.log("pageOneInputArray[0]: " + pageOneInputArray[0]);
     }
     else{
         //if project name hasn't changed, do nothing
         console.log("Project name has not changed.");
     }
 
-    if(pageOneInputrray[1] != updatedProjectDescription){
+    if(pageOneInputArray[1] != updatedProjectDescription){
         //if new project description is different from old project name, update it
-        console.log("Project description changed from: " + pageOneInputrray[1] + " to: " + updatedProjectDescription);
+        console.log("Project description changed from: " + pageOneInputArray[1] + " to: " + updatedProjectDescription);
         console.log("updating the project description...");
-        pageOneInputrray[1] = updatedProjectDescription;
-        console.log("pageOneInputrray[1]: " + pageOneInputrray[1]);
+        pageOneInputArray[1] = updatedProjectDescription;
+        console.log("pageOneInputArray[1]: " + pageOneInputArray[1]);
     }
     else{
         //if project description hasn't changed, do nothing
