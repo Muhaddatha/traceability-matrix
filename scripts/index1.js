@@ -216,23 +216,22 @@ function exportCSV() {
       csv += ',';
     }
   }
-  
   console.log("csv after headings: " + csv);
   let rowTemp = [];
   tableRow.forEach(function(row) {
           if (row.length) {
-            for(let i = 0; i < row.length; i++) {
-              rowTemp[i] = '\"' + row[i] + '\"';
+            for(let i = 1; i < row.length; i++) {
+              rowTemp[i - 1] = '\"' + row[i] + '\"';
             }
-            if (firstExport) {
-              rowTemp.shift();
-            }
+            // if (firstExport) {
+            //   rowTemp.shift();
+            // }
             csv += rowTemp.join(',');
             csv += "\n";
           }
   });
 
-  firstExport = false;
+//   firstExport = false;
 
   console.log("csv after table rows data:" + csv);
   let hiddenLink = document.createElement('a');
