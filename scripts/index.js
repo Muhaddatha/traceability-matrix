@@ -10,7 +10,7 @@ $(document).ready(function(){ //waits until document is fully loaded
 
 
     //checks to see if at-least one checkbox is selected
-    if(!$("#check_1 input").is(' :checked')){
+    if(!$(".check_1 input").is(' :checked')){
       e.preventDefault();
 
       alert("You must have at least one checkbox (other than Requirement ID) checked.");
