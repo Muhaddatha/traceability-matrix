@@ -6,6 +6,15 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 
 $(document).ready(function() {
 
+    //warns when refresh button on browser is clicked
+    window.onbeforeunload = function (evt) {
+        if (typeof evt == 'undefined') {
+          evt = window.event;
+        }
+    }
+
+    //warns about browser back button
+
 
     pageOneInputArray = JSON.parse(sessionStorage.getItem("matrixStorage"));
     //pageOneInputArray received from the first page
