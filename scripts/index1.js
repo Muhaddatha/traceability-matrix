@@ -212,20 +212,20 @@ function exportCSV() {
     //updateTableRowArray function again or add event listener to export.csv button???
 
   //let csv = 'Name,Title\n';
-  let csv = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
+  let csvFile = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
   for(let i = 0; i < tableHeadingsArray.length - 1; i++) {
     console.log("tableHeadingsArray: " + tableHeadingsArray[i].innerText);
-    csv += tableHeadingsArray[i].innerText; // Adds headings
+    csvFile += tableHeadingsArray[i].innerText; // Adds headings
     if (i == tableHeadingsArray.length - 2) {
-      csv += '\n';
+      csvFile += '\n';
     }
     else {
-      csv += ',';
+      csvFile += ',';
     }
   }
-  console.log("csv after headings: " + csv);
+  console.log("csvFile after headings: " + csvFile);
   let rowTemp = [];
   tableRow.forEach(function(row) {
           if (row.length) {
@@ -235,19 +235,19 @@ function exportCSV() {
             // if (firstExport) {
             //   rowTemp.shift();
             // }
-            csv += rowTemp.join(',');
-            csv += "\n";
+            csvFile += rowTemp.join(',');
+            csvFile += "\n";
           }
   });
 
 //   firstExport = false;
 
-  console.log("csv after table rows data:" + csv);
-  let hiddenLink = document.createElement('a');
-  hiddenLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-  hiddenLink.target = '_blank';
-  hiddenLink.download = 'Traceability_matrix.csv';
-  hiddenLink.click();
+  console.log("csvFile after table rows data:" + csvFile);
+  let csvLink = document.createElement('a');
+  csvLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvFile);
+  csvLink.target = '_blank';
+  csvLink.download = 'traceability_matrix.csv';
+  csvLink.click();
 }
 
 
