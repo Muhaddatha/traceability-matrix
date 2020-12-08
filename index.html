@@ -19,10 +19,10 @@
         <form id="form" action="index1.html">
 
 
-          <br><label id="align_text_box" class="aligningFirst">Enter project name: </label>
+          <br><label id="align_text_box" class="aligningFirst" for="projectName">Enter project name: </label>
           <input type="text" id="projectName" required>
           <br><br>
-          <label id="align_text_box" class="aligningFirst">Enter project description: </label>
+          <label id="align_text_box" class="aligningFirst" for="projectDescription">Enter project description: </label>
           <textarea id="projectDescription" rows="4" cols="50" required></textarea>
           <br><br>
           <h3>Choose table headings</h3>
@@ -35,24 +35,24 @@
             <div class="row" id="check-box-row">
               <div class="col-sm-12 col-md-6" id="checkbox-col1">
                 <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
-                <label>Requirement ID</label>
+                <label for="req_id">Requirement ID</label>
                  <span title="Identifier of a functional, non-functional, or business requirement.">&#9432;</span>
                 <br>
 
 
                 <span class="check_1">
                   <input type="checkbox" class="column1" id="req_descrip" name="check">
-                  <label>Requirement Description</label> <span title="Short explanation of user requirement.">&#9432;</span>
+                  <label for="req_descrip">Requirement Description</label> <span title="Short explanation of user requirement.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column2" id="status" name="check">
-                  <label>Status</label> <span title="State of progress for requirement implementation.">&#9432;</span>
+                  <label for="status">Status</label> <span title="State of progress for requirement implementation.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column1" id="priority" name="check">
-                  <label>Priority</label> <span title="Importance ranking of requirement being implemented.">&#9432;</span>
+                  <label for="priority">Priority</label> <span title="Importance ranking of requirement being implemented.">&#9432;</span>
                   <br>
 
 
@@ -62,7 +62,7 @@
 
 
                   <input type="checkbox" class="column1" id="developer" name="check">
-                  <label>Developer</label> <span title="Name of the person(s) implementing the requirement">&#9432;</span>
+                  <label for="developer">Developer</label> <span title="Name of the person(s) implementing the requirement">&#9432;</span>
                   <br>
 
                 </span>
@@ -70,27 +70,27 @@
                 <div class="col-sm-12 col-md-6" id="checkbox-col2">
                   <span class="check_1">
                   <input type="checkbox" class="column2" id="use_case_ID" name="check">
-                  <label>Use Case ID</label> <span title="Identifier of the use case that is related to the requirement.">&#9432;</span>
+                  <label for="use_case_ID">Use Case ID</label> <span title="Identifier of the use case that is related to the requirement.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column1" id="use_case_descrip" name="check">
-                  <label>Use Case Description</label> <span title="Short explanation of the use case for the requirement.">&#9432;</span>
+                  <label for="use_case_descrip">Use Case Description</label> <span title="Short explanation of the use case for the requirement.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column2" id="test_case_ID" name="check">
-                  <label>Test Case ID</label> <span title="Identifier of test case that is related to the requirement.">&#9432;</span>
+                  <label for="test_case_ID">Test Case ID</label> <span title="Identifier of test case that is related to the requirement.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column1" id="test_case_descrip" name="check">
-                  <label>Test Case Description</label> <span title="Short explanation of the test to be used for the requirement.">&#9432;</span>
+                  <label for="test_case_descrip">Test Case Description</label> <span title="Short explanation of the test to be used for the requirement.">&#9432;</span>
                   <br>
 
 
                   <input type="checkbox" class="column2" id="tester" name="check">
-                  <label>Tester</label> <span title="Name of the person(s) testing the requirement.">&#9432;</span>
+                  <label for="tester">Tester</label> <span title="Name of the person(s) testing the requirement.">&#9432;</span>
                
                   </span>
               </div>
