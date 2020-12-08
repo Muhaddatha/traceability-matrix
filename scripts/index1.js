@@ -49,7 +49,7 @@ $(document).ready(function() {
             $("#form-labels-and-input-fields").append('<select id="' + inputIdToShow + '"> <select id="' + inputIdToShow + '"></select> <br>');
             $("#priority").append('"<option value="Custom">Custom</option><option value="low">Low</option> <option value="medium">Medium</option> <option value="high">High</option>"');
 
-            $("#headingsRow").append('<th>Priority</th>')
+            $("#headingsRow").append('<th>Priority</th>');
         }
         else{
             if(inputIdToShow == "req_id"){
@@ -60,39 +60,39 @@ $(document).ready(function() {
             }
             else if(inputIdToShow == "req_descrip"){
                 $("#form-labels-and-input-fields").append('<label id="req_des" class="aligningSecond" for="' + inputIdToShow + '" > Requirement Description: </label>');
-                $("#headingsRow").append('<th>Requirement Description</th>')
+                $("#headingsRow").append('<th>Requirement Description</th>');
             }
             else if(inputIdToShow == "status"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Status: </label>');
-                $("#headingsRow").append('<th>Status</th>')
+                $("#headingsRow").append('<th>Status</th>');
             }
             else if(inputIdToShow == "class"){
                 $("#form-labels-and-input-fields").append('<label id="classmethfunc" class="aligningSecond" for="' + inputIdToShow + '" > Class/Methods/Functions: </label>');
-                $("#headingsRow").append('<th>Class/Methods/Functions</th>')
+                $("#headingsRow").append('<th>Class/Methods/Functions</th>');
             }
             else if(inputIdToShow == "developer"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Developer(s): </label>');
-                $("#headingsRow").append('<th>Developers(s)</th>')
+                $("#headingsRow").append('<th>Developers(s)</th>');
             }
             else if(inputIdToShow == "use_case_ID"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Use case ID: </label>');
-                $("#headingsRow").append('<th>Use Case ID</th>')
+                $("#headingsRow").append('<th>Use Case ID</th>');
             }
             else if(inputIdToShow == "use_case_descrip"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Use case description: </label>');
-                $("#headingsRow").append('<th>Use Case Description</th>')
+                $("#headingsRow").append('<th>Use Case Description</th>');
             }
             else if(inputIdToShow == "test_case_ID"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Test case ID: </label>');
-                $("#headingsRow").append('<th>Test Case ID</th>')
+                $("#headingsRow").append('<th>Test Case ID</th>');
             }
             else if(inputIdToShow == "test_case_descrip"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Test case description: </label>');
-                $("#headingsRow").append('<th>Test Case Description</th>')
+                $("#headingsRow").append('<th>Test Case Description</th>');
             }
             else if(inputIdToShow == "tester"){
                 $("#form-labels-and-input-fields").append('<label class="aligningSecond" for="' + inputIdToShow + '" > Tester: </label>');
-                $("#headingsRow").append('<th>Tester</th>')
+                $("#headingsRow").append('<th>Tester</th>');
             }
 
             //Append input field for the user option
@@ -106,7 +106,7 @@ $(document).ready(function() {
 
     }
 
-    $("#headingsRow").append('<th>Delete</th>')
+    $("#headingsRow").append('<th>Delete</th>');
 
 
     //Whenever add row form is submitted, call the handler
