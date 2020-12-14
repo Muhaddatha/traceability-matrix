@@ -9,6 +9,7 @@ body {
   background-color: #b3dbff;
   padding: 1%;
   padding-bottom: 4%;
+  width: fit-content; 
 }
 
 input, textarea {
@@ -124,4 +125,9 @@ iframe{
   margin: auto;
   width: 100%;
   height: auto;
+}
+
+#table table{
+  border-collapse: none;
+  border-color:red;
 }
