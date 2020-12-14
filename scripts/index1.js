@@ -7,13 +7,34 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 $(document).ready(function() {
 
     //warns when refresh button on browser is clicked
-    window.onbeforeunload = function (evt) {
-        if (typeof evt == 'undefined') {
-          evt = window.event;
-        }
-    }
+    // window.onbeforeunload = function (evt) {
+    //     if (typeof evt == 'undefined') {
+    //       evt = window.event;
+    //     }
+    //     else{
+    //         let choice = confirm("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
+    //         if (choice) {
+    //         location.href='index.html';
+    //         }
+
+    //     }
+    // }
 
     //warns about browser back button
+    window.onhashchange = function(evt){
+        // let choice = confirm("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
+        // if (choice) {
+        // location.href='index.html';
+        // }
+        // alert("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
+        if (typeof evt == 'undefined') {
+            evt = window.event;
+        }
+        
+    }
+
+
+
 
 
     pageOneInputArray = JSON.parse(sessionStorage.getItem("matrixStorage"));
@@ -359,4 +380,24 @@ function handleGoBack() {
   if (choice) {
     location.href='index.html';
   }
+}
+
+function handleBackAndRefresh(){
+    if(window.event){  
+        if(window.event.clientX < 40 && window.event.clientY < 0){  
+            alert("Browser back button is clicked...");  
+        }  
+        else{  
+            alert("Browser refresh button is clicked...");  
+        }  
+    }  
+    else{  
+        if(event.currentTarget.performance.navigation.type == 1){  
+              alert("Browser refresh button is clicked...");  
+         }  
+         if(event.currentTarget.performance.navigation.type == 2)  
+        {  
+              alert("Browser back button is clicked...");  
+        }  
+     }  
 }
