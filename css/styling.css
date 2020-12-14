@@ -9,6 +9,7 @@ body {
   background-color: #b3dbff;
   padding: 1%;
   padding-bottom: 4%;
+  width: fit-content;
 }
 
 input, textarea {
@@ -64,17 +65,19 @@ label {
 }
 
 #add_new_row_h2 {
-	margin-bottom: .5em;
+  margin-bottom: .5em;
 }
 
 #add_btn {
-	margin-top: .5em;
-	background-color: #56E01C;
+	margin-top: 1em;
+	background-color: #1db356;
 	color: white;
 	font-size: 120%;
 	padding-left: 2em;
 	padding-right: 2em;
-  margin-left: 8em;
+  margin-left: 13em;
+
+
 }
 
 .aDeleteButton {
