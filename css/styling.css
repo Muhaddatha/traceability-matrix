@@ -147,3 +147,22 @@ iframe{
   height: 25%;
   width: 50%; */
 }
+
+table.table-bordered{
+  border:2px solid rgb(56, 56, 56, 1);
+  margin-top:20px;
+}
+table.table-bordered > thead > tr > th{
+  border:2px solid rgb(56, 56, 56, 1);
+}
+table.table-bordered > tbody > tr > td{
+  border:2px solid rgb(56, 56, 56, 1);
+}
+
+#addNewRowDiv{
+  width: fit-content;
+  border: 3px solid rgba(27, 103, 175, 0.7);
+  padding: 2%;
+  margin: auto;
+}
+
