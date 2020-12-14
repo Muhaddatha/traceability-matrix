@@ -137,3 +137,11 @@ table.table-bordered > thead > tr > th{
 table.table-bordered > tbody > tr > td{
   border:2px solid rgb(56, 56, 56, 1);
 }
+
+#addNewRowDiv{
+  width: fit-content;
+  border: 3px solid rgb(4, 66, 133, 0.7);
+  padding: 3%;
+  margin: auto;
+}
+
