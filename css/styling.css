@@ -106,8 +106,11 @@ form span[title] {
 }
 
 #tableOfButtons {
-  border-collapse: collapse;
-  width: 120%;
+  /* border-collapse: collapse;
+  width: 120%; */
+  display: flex;
+  justify-content: space-around;
+
 }
 
 #sev2 {
