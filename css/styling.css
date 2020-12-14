@@ -64,17 +64,19 @@ label {
 }
 
 #add_new_row_h2 {
-	margin-bottom: .5em;
+  margin-bottom: .5em;
 }
 
 #add_btn {
-	margin-top: .5em;
-	background-color: #56E01C;
+	margin-top: 1em;
+	background-color: #1db356;
 	color: white;
 	font-size: 120%;
 	padding-left: 2em;
 	padding-right: 2em;
-  margin-left: 8em;
+  margin-left: 13em;
+  
+  
 }
 
 .aDeleteButton {
@@ -140,8 +142,8 @@ table.table-bordered > tbody > tr > td{
 
 #addNewRowDiv{
   width: fit-content;
-  border: 3px solid rgb(4, 66, 133, 0.7);
-  padding: 3%;
+  border: 3px solid rgba(27, 103, 175, 0.7);
+  padding: 2%;
   margin: auto;
 }
 
