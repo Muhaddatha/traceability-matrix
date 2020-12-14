@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Traceability Matrix Builder</title> <!-- Fix later -->
+    <title>Traceability Matrix Builder</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styling.css">
@@ -10,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/index1.js"></script>
   </head>
+  
   <body onbeforeunload="handleBackAndRefresh()">
     <header>
       <h1>Matrix Builder</h1>
@@ -49,7 +51,7 @@
               </th>
             </tr>
             <tr id="headingsRow">
-              <!-- <th>ID</th> -->
+
 
 
             </tr>
@@ -68,11 +70,11 @@
       <footer>
         <br>
         <div id="tableOfButtons">
-          
+
           <input type="button" value="Go back" class="pageTwoButton" id="go_back_btn" onclick="handleGoBack();">
           <input type="button" value="Clear" class="pageTwoButton" id="clear_btn" onclick="clearTableHandler();">
           <input type="button" value="Export CSV" class="pageTwoButton" id="export_csv_btn" onclick="exportCSV();">
-          
+
         </div>
       </footer>
     </main>

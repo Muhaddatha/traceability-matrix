@@ -17,24 +17,6 @@ input, textarea {
   outline: none;
   background-color: AliceBlue;
 }
-/*
- input[type="checkbox"] {
-  height: 20px;
-  width: 20px;
-  appearance: none;
-  background-color: AliceBlue;
-  cursor: pointer;
-} */
-
-/*input[type="checkbox"]:checked + label::before {
-  background-color: AliceBlue;
-  /* content: '\2713';
-  font-size: 75%;
-  color: black;
-  position: absolute;
-  left: 1.3rem;
-  top: 0.01rem;
-} */
 
 #align_text_box {
   float: left;
@@ -58,6 +40,7 @@ label {
 	display: inline-block;
 	text-align: right;
 }
+
 .aligningSecond {
 	width: 13em;
 	display: inline-block;
@@ -76,8 +59,6 @@ label {
 	padding-left: 2em;
 	padding-right: 2em;
   margin-left: 13em;
-
-
 }
 
 .aDeleteButton {
@@ -110,11 +91,8 @@ form span[title] {
 }
 
 #tableOfButtons {
-  /* border-collapse: collapse;
-  width: 120%; */
   display: flex;
   justify-content: space-around;
-
 }
 
 #sev2 {
@@ -142,19 +120,17 @@ iframe{
   width: 50%;
   height: 50%;
   margin-top: 6%;
-  /* margin: 5% auto;
-  display: block;
-  height: 25%;
-  width: 50%; */
 }
 
 table.table-bordered{
   border:2px solid rgb(56, 56, 56, 1);
   margin-top:20px;
 }
+
 table.table-bordered > thead > tr > th{
   border:2px solid rgb(56, 56, 56, 1);
 }
+
 table.table-bordered > tbody > tr > td{
   border:2px solid rgb(56, 56, 56, 1);
 }
@@ -165,4 +141,3 @@ table.table-bordered > tbody > tr > td{
   padding: 2%;
   margin: auto;
 }
-

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -6,44 +7,35 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styling.css">
-    <!-- <link rel="stylesheet" href="css/checkbox.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/index.js"></script>
   </head>
+
   <body>
       <header>
         <h1>Welcome to the Traceability Matrix Builder Tiny Tool</h1>
-
       </header>
+
       <main>
-
         <form id="form" action="index1.html">
-
-
-          <br><label id="align_text_box" class="aligningFirst" for="projectName">Enter project name: </label>
+          <br>
+          <label id="align_text_box" class="aligningFirst" for="projectName">Enter project name: </label>
           <input type="text" id="projectName" required>
           <br><br>
           <label id="align_text_box" class="aligningFirst" for="projectDescription">Enter project description: </label>
           <textarea id="projectDescription" rows="4" cols="50" required></textarea>
           <br><br>
+
           <h3>Choose table headings</h3>
           <br>
-          <!-- <input type="checkbox" class="column1" id="id" name="check">
-          <label>ID</label> <span>&#9432;</span>
-          <br> -->
 
           <div class="container" id="checkbox-container">
             <div class="row" id="check-box-row">
               <div class="col-sm-12 col-md-6" id="checkbox-col1">
-                <!-- <label class="contain" for="req_id">Requirement ID -->
-                  <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
-                  <label for="req_id">Requirement ID</label>
-                  <!-- <span class="checkmark"></span> -->
-                  <!--checked="checked" onclick="return false"  -->
-                  <span title="Identifier of a functional, non-functional, or business requirement.">&#9432;</span>
-                <!-- </label> -->
+                <input type="checkbox" class="column2" id="req_id" name="check" checked="checked" onclick="return false">
+                <label for="req_id">Requirement ID</label>
+                <span title="Identifier of a functional, non-functional, or business requirement.">&#9432;</span>
                 <br>
-
 
                 <span class="check_1">
                   <input type="checkbox" class="column1" id="req_descrip" name="check">
@@ -69,11 +61,11 @@
                   <input type="checkbox" class="column1" id="developer" name="check">
                   <label for="developer">Developer</label> <span title="Name of the person(s) implementing the requirement">&#9432;</span>
                   <br>
-
                 </span>
-                </div>
-                <div class="col-sm-12 col-md-6" id="checkbox-col2">
-                  <span class="check_1">
+              </div>
+
+              <div class="col-sm-12 col-md-6" id="checkbox-col2">
+                <span class="check_1">
                   <input type="checkbox" class="column2" id="use_case_ID" name="check">
                   <label for="use_case_ID">Use Case ID</label> <span title="Identifier of the use case that is related to the requirement.">&#9432;</span>
                   <br>
@@ -96,38 +88,19 @@
 
                   <input type="checkbox" class="column2" id="tester" name="check">
                   <label for="tester">Tester</label> <span title="Name of the person(s) testing the requirement.">&#9432;</span>
-
-                  </span>
+                </span>
               </div>
 
             </div>
-
-
           </div>
 
-
-
-
-
-
-
           <input type="submit" id="continueButton" value="Continue">
-
-
         </form>
 
-
-
-
+        <div class="videoStyle">
+          <h3>Traceability Matrix Builder Tutorial</h3>
+          <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
+        </div>
       </main>
-
-      <div class="videoStyle">
-        <h3>Traceability Matrix Builder Tutorial</h3>
-        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
-      </div>
-      <footer>
-
-
-      </footer>
   </body>
 </html>
