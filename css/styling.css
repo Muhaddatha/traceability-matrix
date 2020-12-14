@@ -41,6 +41,7 @@ input, textarea {
 }
 
  #continueButton {
+   display: block;
   cursor: pointer;
   font-size: 150%;
   float: right;
@@ -90,7 +91,7 @@ label {
 }
 
 .pageTwoButton {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 h1 {
@@ -120,8 +121,26 @@ form span[title] {
   margin-left: 160em;
 }
 
-iframe{
-  margin: auto;
+.videoStyle {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
   width: 100%;
-  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.videoStyle h3 {
+  margin-top: 2%;
+}
+
+iframe{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin-top: 6%;
+  /* margin: 5% auto;
+  display: block;
+  height: 25%;
+  width: 50%; */
 }
