@@ -127,7 +127,13 @@ iframe{
   height: auto;
 }
 
-#table table{
-  border-collapse: none;
-  border-color:red;
+table.table-bordered{
+  border:2px solid rgb(56, 56, 56, 1);
+  margin-top:20px;
+}
+table.table-bordered > thead > tr > th{
+  border:2px solid rgb(56, 56, 56, 1);
+}
+table.table-bordered > tbody > tr > td{
+  border:2px solid rgb(56, 56, 56, 1);
 }
