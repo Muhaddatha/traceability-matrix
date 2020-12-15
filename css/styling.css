@@ -29,6 +29,7 @@ input, textarea {
   font-size: 150%;
   float: right;
   margin-right: 3%;
+  
 }
 
 label {
@@ -102,24 +103,15 @@ form span[title] {
   margin-left: 160em;
 }
 
-.videoStyle {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.videoStyle h3 {
-  margin-top: 2%;
+#videoH3{
+  margin-top: 5%;
+  text-align: center;
 }
 
 iframe{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  margin-top: 6%;
+  margin: 2% auto;
+  display: block;
+  margin-bottom: 0;
 }
 
 table.table-bordered{
