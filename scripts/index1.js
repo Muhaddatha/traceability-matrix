@@ -6,26 +6,10 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 
 $(document).ready(function() {
 
-    //warns when refresh button on browser is clicked
-    // window.onbeforeunload = function (evt) {
-    //     if (typeof evt == 'undefined') {
-    //       evt = window.event;
-    //     }
-    //     else{
-    //         let choice = confirm("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
-    //         if (choice) {
-    //         location.href='index.html';
-    //         }
-
-    //     }
-    // }
-
+    
     //warns about browser back button
     window.onhashchange = function(evt){
-        // let choice = confirm("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
-        // if (choice) {
-        // location.href='index.html';
-        // }
+        
         // alert("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
         if (typeof evt == 'undefined') {
             evt = window.event;
@@ -120,10 +104,6 @@ $(document).ready(function() {
             $("#form-labels-and-input-fields").append('<input type="text" id="' + inputIdToShow + '"> <br>');
 
         }
-
-        //when form submitted, get element by name
-        //make row object
-        //add row's data to table dt
 
     }
 
@@ -226,13 +206,7 @@ function exportCSV() {
 
     //call function that updates the tableRow array
     updateTableRowArray();
-    //raise alerts if project name and project description are empty?
-    //raise alerts if no rows are in the table?
-    //add test cases to test plan document?
-    //then call
-    //updateTableRowArray function again or add event listener to export.csv button???
-
-  //let csv = 'Name,Title\n';
+    
   let csvFile = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
@@ -253,15 +227,12 @@ function exportCSV() {
             for(let i = 1; i < row.length; i++) {
               rowTemp[i - 1] = '\"' + row[i] + '\"';
             }
-            // if (firstExport) {
-            //   rowTemp.shift();
-            // }
             csvFile += rowTemp.join(',');
             csvFile += "\n";
           }
   });
 
-//   firstExport = false;
+
 
   console.log("csvFile after table rows data:" + csvFile);
   let csvLink = document.createElement('a');
