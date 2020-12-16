@@ -6,15 +6,15 @@ let rowID = 0; //global variable to keep track of row ids that are auto incremen
 
 $(document).ready(function() {
 
-    
+
     //warns about browser back button
     window.onhashchange = function(evt){
-        
+
         // alert("Warning: your traceability matrix will be cleared if you go back.\nDo you want to continue?");
         if (typeof evt == 'undefined') {
             evt = window.event;
         }
-        
+
     }
 
 
@@ -137,7 +137,7 @@ function handleAddRowForm(e) {
     for(let i = 1; i < rowElement.length; i++) {
       $("#" + rowID).append("<td class='pt-3-half' contenteditable='true'>" + rowElement[i] + "</td>");
     }
-    $("#" + rowID).append("<input type='button' class='aDeleteButton' id=" + rowID + " value='Delete' onclick='deleteRowHandler(this.id)'>");
+    $("#" + rowID).append("<td><input type='button' class='aDeleteButton' id=" + rowID + " value='Delete' onclick='deleteRowHandler(this.id)'></td>");
 
     //reset form values
     console.log("Resetting the form");
@@ -206,7 +206,7 @@ function exportCSV() {
 
     //call function that updates the tableRow array
     updateTableRowArray();
-    
+
   let csvFile = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
@@ -354,21 +354,21 @@ function handleGoBack() {
 }
 
 function handleBackAndRefresh(){
-    if(window.event){  
-        if(window.event.clientX < 40 && window.event.clientY < 0){  
-            alert("Browser back button is clicked...");  
-        }  
-        else{  
-            alert("Browser refresh button is clicked...");  
-        }  
-    }  
-    else{  
-        if(event.currentTarget.performance.navigation.type == 1){  
-              alert("Browser refresh button is clicked...");  
-         }  
-         if(event.currentTarget.performance.navigation.type == 2)  
-        {  
-              alert("Browser back button is clicked...");  
-        }  
-     }  
+    if(window.event){
+        if(window.event.clientX < 40 && window.event.clientY < 0){
+            alert("Browser back button is clicked...");
+        }
+        else{
+            alert("Browser refresh button is clicked...");
+        }
+    }
+    else{
+        if(event.currentTarget.performance.navigation.type == 1){
+              alert("Browser refresh button is clicked...");
+         }
+         if(event.currentTarget.performance.navigation.type == 2)
+        {
+              alert("Browser back button is clicked...");
+        }
+     }
 }
