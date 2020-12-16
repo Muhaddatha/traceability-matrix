@@ -207,7 +207,7 @@ function exportCSV() {
     //call function that updates the tableRow array
     updateTableRowArray();
 
-  let csvFile = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project Description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
+  let csvFile = '\"Project name: ' + pageOneInputArray[0] + '\",' + '\"Project description: ' + pageOneInputArray[1] + '\"' +  '\n'; // Adds Project name and description
 
   let tableHeadingsArray = document.getElementById('headingsRow').getElementsByTagName('th');
   for(let i = 0; i < tableHeadingsArray.length - 1; i++) {
