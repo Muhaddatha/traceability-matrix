@@ -225,6 +225,10 @@ function exportCSV() {
   tableRow.forEach(function(row) {
           if (row.length) {
             for(let i = 1; i < row.length; i++) {
+              // Replace double quotes with two single quotes
+              row[i] = row[i].replace(/"/g, "''");
+            }
+            for(let i = 1; i < row.length; i++) {
               rowTemp[i - 1] = '\"' + row[i] + '\"';
             }
             csvFile += rowTemp.join(',');
